@@ -36,15 +36,14 @@ function _build() {
     IFS=/ read -r -a arr <<<"$osarch"
     os="${arr[0]}"
     arch="${arr[1]}"
-    package=$(go list -f '{{.ImportPath}}')
-    printf -- "--> %15s:%s\n" "${osarch}" "${package}"
+    printf -- "--> %15s:%s\n" "${osarch}" "(library packages)"
 
-    # Go build to build the binary.
+    # bm-cli is library-only; verify every package compiles for this target.
     export GOOS=$os
     export GOARCH=$arch
     export GO111MODULE=on
     export CGO_ENABLED=0
-    go build -tags kqueue -o /dev/null
+    go build -tags kqueue ./...
 }
 
 function main() {
