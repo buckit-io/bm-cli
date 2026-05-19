@@ -25,11 +25,11 @@ import (
 
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/jedib0t/go-pretty/v6/text"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/cmd/ilm"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7/pkg/lifecycle"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/cmd/ilm"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
 )
 
 var ilmListFlags = []cli.Flag{

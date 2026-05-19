@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminPolicySubcommands = []cli.Command{
 	adminPolicyCreateCmd,
@@ -35,7 +35,7 @@ var adminPolicySubcommands = []cli.Command{
 
 var adminPolicyCmd = cli.Command{
 	Name:            "policy",
-	Usage:           "manage policies defined in the MinIO server",
+	Usage:           "manage policies defined in the Buckit server",
 	Action:          mainAdminPolicy,
 	Before:          setGlobalsFromContext,
 	Flags:           globalFlags,
@@ -43,7 +43,7 @@ var adminPolicyCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainAdminPolicy is the handle for "mc admin policy" command.
+// mainAdminPolicy is the handle for "bm admin policy" command.
 func mainAdminPolicy(ctx *cli.Context) error {
 	commandNotFound(ctx, adminPolicySubcommands)
 	return nil

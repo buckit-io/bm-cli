@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var topLocksFlag = []cli.Flag{
@@ -36,16 +36,16 @@ var topLocksFlag = []cli.Flag{
 
 var adminTopLocksCmd = cli.Command{
 	Name:         "locks",
-	Usage:        "get a list of the 10 oldest locks on a MinIO cluster.",
+	Usage:        "get a list of the 10 oldest locks on a Buckit cluster.",
 	Before:       setGlobalsFromContext,
 	Action:       mainAdminTopLocks,
 	OnUsageError: onUsageError,
 	Flags:        append(globalFlags, topLocksFlag...),
-	CustomHelpTemplate: `Please use 'mc support top locks'
+	CustomHelpTemplate: `Please use 'bm support top locks'
 `,
 }
 
 func mainAdminTopLocks(_ *cli.Context) error {
-	deprecatedError("mc support top locks")
+	deprecatedError("bm support top locks")
 	return nil
 }

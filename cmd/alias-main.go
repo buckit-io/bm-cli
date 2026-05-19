@@ -18,13 +18,13 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
-//   Configure an alias in MinIO Client
+//   Configure an alias in Buckit Client
 //
 //   ----
 //   NOTE: that the alias command only writes values to the config file.
@@ -55,7 +55,7 @@ var aliasCmd = cli.Command{
 	Subcommands:     aliasSubcommands,
 }
 
-// mainAlias is the handle for "mc alias" command. provides sub-commands which write configuration data in json format to config file.
+// mainAlias is the handle for "bm alias" command. provides sub-commands which write configuration data in json format to config file.
 func mainAlias(ctx *cli.Context) error {
 	commandNotFound(ctx, aliasSubcommands)
 	return nil

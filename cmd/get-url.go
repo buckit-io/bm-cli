@@ -21,8 +21,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7"
 )
 
 // prepareGetURLs - prepares target and source clientURLs for copying.

@@ -18,9 +18,9 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 type supportProxyRemoveMessage struct {
@@ -67,7 +67,7 @@ func checkSupportProxyRemoveSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainSupportProxyRemove is the handler for "mc support proxy remove" command.
+// mainSupportProxyRemove is the handler for "bm support proxy remove" command.
 func mainSupportProxyRemove(ctx *cli.Context) error {
 	// Check for command syntax
 	checkSupportProxyRemoveSyntax(ctx)

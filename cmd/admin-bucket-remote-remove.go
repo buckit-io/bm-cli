@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var adminBucketRemoteRmCmd = cli.Command{
@@ -32,8 +32,8 @@ var adminBucketRemoteRmCmd = cli.Command{
 	HideHelp:     true,
 }
 
-// mainAdminBucketRemoteRemove is the handle for "mc admin bucket remote rm" command.
+// mainAdminBucketRemoteRemove is the handle for "bm admin bucket remote rm" command.
 func mainAdminBucketRemoteRemove(_ *cli.Context) error {
-	deprecatedError("mc replicate rm")
+	deprecatedError("bm replicate rm")
 	return nil
 }

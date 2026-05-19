@@ -23,9 +23,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7"
 )
 
 const envPrefix = "MC_"

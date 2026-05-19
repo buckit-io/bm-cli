@@ -24,11 +24,11 @@ import (
 
 	"github.com/charmbracelet/lipgloss"
 	"github.com/charmbracelet/lipgloss/table"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	madmin "github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	madmin "github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminTierListCmd = cli.Command{
@@ -111,7 +111,7 @@ func mainAdminTierList(ctx *cli.Context) error {
 	fatalIf(probe.NewError(e).Trace(args...), "Unable to list configured remote tier targets")
 
 	if len(tiers) == 0 {
-		console.Infoln("No remote tier targets found for alias '" + aliasedURL + "'. Use `mc ilm tier add` to configure one.")
+		console.Infoln("No remote tier targets found for alias '" + aliasedURL + "'. Use `bm ilm tier add` to configure one.")
 		return nil
 	}
 

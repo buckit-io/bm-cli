@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var idpOpenidAccesskeyDisableCmd = cli.Command{

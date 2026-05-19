@@ -25,9 +25,9 @@ import (
 
 	"github.com/dustin/go-humanize"
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 // List of all flags supported by find command.
@@ -87,11 +87,11 @@ var (
 		},
 		cli.StringSliceFlag{
 			Name:  "metadata",
-			Usage: "match metadata with RE2 regex pattern. Specify each with key=regex. MinIO server only.",
+			Usage: "match metadata with RE2 regex pattern. Specify each with key=regex. Buckit server only.",
 		},
 		cli.StringSliceFlag{
 			Name:  "tags",
-			Usage: "match tags with RE2 regex pattern. Specify each with key=regex. MinIO server only.",
+			Usage: "match tags with RE2 regex pattern. Specify each with key=regex. Buckit server only.",
 		},
 	}
 )
@@ -154,7 +154,7 @@ EXAMPLES:
       {{.Prompt}} {{.HelpName}} s3/photos --regex "(?i)\.(jpg|png|gif)$"
 
   06. Find all images with ".jpg" extension under "s3/bucket" and copy to "play/bucket" *continuously*.
-      {{.Prompt}} {{.HelpName}} s3/bucket --name "*.jpg" --watch --exec "mc cp {} play/bucket"
+      {{.Prompt}} {{.HelpName}} s3/bucket --name "*.jpg" --watch --exec "bm cp {} play/bucket"
 
   07. Find and generate public URLs valid for 7 days, for all objects between 64 MB, and 1 GB in size under "s3" account.
       {{.Prompt}} {{.HelpName}} s3 --larger 64MB --smaller 1GB --print {url}
@@ -170,7 +170,7 @@ EXAMPLES:
       {{.Prompt}} {{.HelpName}} s3/bucket --maxdepth 3
 
   11. Copy all versions of all objects in bucket in the local machine
-      {{.Prompt}} {{.HelpName}} s3/bucket --versions --exec "mc cp --version-id {version} {} /tmp/dir/{}.{version}"
+      {{.Prompt}} {{.HelpName}} s3/bucket --versions --exec "bm cp --version-id {version} {} /tmp/dir/{}.{version}"
 `,
 }
 

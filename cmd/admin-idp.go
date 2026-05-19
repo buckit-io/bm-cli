@@ -17,11 +17,11 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminIDPCmd = cli.Command{
 	Name:            "idp",
-	Usage:           "manage MinIO IDentity Provider server configuration",
+	Usage:           "manage Buckit IDentity Provider server configuration",
 	Action:          mainAdminIDP,
 	Before:          setGlobalsFromContext,
 	Flags:           globalFlags,
@@ -29,11 +29,11 @@ var adminIDPCmd = cli.Command{
 	Hidden:          true,
 	CustomHelpTemplate: `This command's functionality has moved and this command is DEPRECATED.
 
-Please use commands under 'mc idp ldap|openid' instead.
+Please use commands under 'bm idp ldap|openid' instead.
 `,
 }
 
 func mainAdminIDP(_ *cli.Context) error {
-	deprecatedError("mc idp ldap|openid")
+	deprecatedError("bm idp ldap|openid")
 	return nil
 }

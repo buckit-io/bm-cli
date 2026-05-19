@@ -22,7 +22,7 @@ import (
 	"strings"
 
 	"github.com/charmbracelet/lipgloss"
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var idpOpenidAccesskeyInfoCmd = cli.Command{

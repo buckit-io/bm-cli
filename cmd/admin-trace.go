@@ -37,11 +37,11 @@ import (
 	"github.com/dustin/go-humanize"
 	"github.com/fatih/color"
 	"github.com/klauspost/compress/zstd"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminTraceFlags = []cli.Flag{
@@ -216,10 +216,10 @@ UNITS
   also accepted. Without suffixes the unit is bytes.
 
 EXAMPLES:
-  1. Show verbose console trace for MinIO server
+  1. Show verbose console trace for Buckit server
      {{.Prompt}} {{.HelpName}} -v -a myminio
 
-  2. Show trace only for failed requests for MinIO server
+  2. Show trace only for failed requests for Buckit server
     {{.Prompt}} {{.HelpName}} -v -e myminio
 
   3. Show verbose console trace for requests with '503' status code

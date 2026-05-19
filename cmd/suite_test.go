@@ -39,7 +39,7 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/minio/mc/pkg/disk"
+	"github.com/buckit-io/bm-cli/pkg/disk"
 )
 
 // RUN: go test -v ./... -run Test_FullSuite

@@ -40,23 +40,23 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/minio/minio-go/v7/pkg/cors"
-	"github.com/minio/pkg/v3/env"
+	"github.com/buckit-io/minio-go/v7/pkg/cors"
+	"github.com/buckit-io/pkg/v3/env"
 
-	"github.com/minio/minio-go/v7"
-	"github.com/minio/minio-go/v7/pkg/credentials"
-	"github.com/minio/minio-go/v7/pkg/encrypt"
-	"github.com/minio/minio-go/v7/pkg/lifecycle"
-	"github.com/minio/minio-go/v7/pkg/notification"
-	"github.com/minio/minio-go/v7/pkg/policy"
-	"github.com/minio/minio-go/v7/pkg/replication"
-	"github.com/minio/minio-go/v7/pkg/s3utils"
-	"github.com/minio/minio-go/v7/pkg/sse"
-	"github.com/minio/minio-go/v7/pkg/tags"
-	"github.com/minio/pkg/v3/mimedb"
+	"github.com/buckit-io/minio-go/v7"
+	"github.com/buckit-io/minio-go/v7/pkg/credentials"
+	"github.com/buckit-io/minio-go/v7/pkg/encrypt"
+	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
+	"github.com/buckit-io/minio-go/v7/pkg/notification"
+	"github.com/buckit-io/minio-go/v7/pkg/policy"
+	"github.com/buckit-io/minio-go/v7/pkg/replication"
+	"github.com/buckit-io/minio-go/v7/pkg/s3utils"
+	"github.com/buckit-io/minio-go/v7/pkg/sse"
+	"github.com/buckit-io/minio-go/v7/pkg/tags"
+	"github.com/buckit-io/pkg/v3/mimedb"
 
-	"github.com/minio/mc/pkg/deadlineconn"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/buckit-io/bm-cli/pkg/deadlineconn"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 )
 
 // S3Client construct
@@ -1240,8 +1240,8 @@ func (c *S3Client) Remove(ctx context.Context, isIncomplete, isRemoveBucket, isB
 		if isRemoveBucket && object != "" {
 			resultCh <- RemoveResult{
 				Err: probe.NewError(errors.New(
-					"use `mc rm` command to delete prefixes, or point your" +
-						" bucket directly, `mc rb <alias>/<bucket-name>/`"),
+					"use `bm rm` command to delete prefixes, or point your" +
+						" bucket directly, `bm rb <alias>/<bucket-name>/`"),
 				),
 			}
 			return
@@ -1566,7 +1566,7 @@ func (c *S3Client) listObjectWrapper(ctx context.Context, bucket, object string,
 
 	if isGoogle(c.targetURL.Host) {
 		// Google Cloud S3 layer doesn't implement ListObjectsV2 implementation
-		// https://github.com/minio/mc/issues/3073
+		// https://github.com/buckit-io/bm-cli/issues/3073
 		return c.api.ListObjects(ctx, bucket, minio.ListObjectsOptions{Prefix: object, Recursive: isRecursive, UseV1: true, MaxKeys: maxKeys})
 	}
 	opts := minio.ListObjectsOptions{Prefix: object, Recursive: isRecursive, WithMetadata: metadata, MaxKeys: maxKeys}

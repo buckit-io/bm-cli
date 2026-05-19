@@ -21,10 +21,10 @@ import (
 	"fmt"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminConfigRestoreCmd = cli.Command{
@@ -44,7 +44,7 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Restore 'restore-id' history key value on MinIO server.
+  1. Restore 'restore-id' history key value on Buckit server.
      {{.Prompt}} {{.HelpName}} play/ <restore-id>
 `,
 }
@@ -58,7 +58,7 @@ type configRestoreMessage struct {
 
 // String colorized service status message.
 func (u configRestoreMessage) String() (msg string) {
-	suggestion := fmt.Sprintf("mc admin service restart %s", u.targetAlias)
+	suggestion := fmt.Sprintf("bm admin service restart %s", u.targetAlias)
 	msg += console.Colorize("ConfigRestoreMessage",
 		fmt.Sprintf("Please restart your server with `%s`.\n", suggestion))
 	msg += console.Colorize("ConfigRestoreMessage", "Restored "+u.RestoreID+" kv successfully.")

@@ -21,10 +21,10 @@ import (
 	"os"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var policyInfoFlags = []cli.Flag{
@@ -48,7 +48,7 @@ USAGE:
   {{.HelpName}} TARGET POLICYNAME [OPTIONS...]
 
 POLICYNAME:
-  Name of the policy on the MinIO server.
+  Name of the policy on the Buckit server.
 
 FLAGS:
   {{range .VisibleFlags}}{{.}}
@@ -87,7 +87,7 @@ func getPolicyInfo(client *madmin.AdminClient, policyName string) (*madmin.Polic
 	return pinfo, nil
 }
 
-// mainAdminPolicyInfo is the handler for "mc admin policy info" command.
+// mainAdminPolicyInfo is the handler for "bm admin policy info" command.
 func mainAdminPolicyInfo(ctx *cli.Context) error {
 	checkAdminPolicyInfoSyntax(ctx)
 

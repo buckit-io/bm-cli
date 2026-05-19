@@ -22,11 +22,11 @@ import (
 
 	humanize "github.com/dustin/go-humanize"
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var supportTopLocksFlag = []cli.Flag{
@@ -45,7 +45,7 @@ var supportTopLocksFlag = []cli.Flag{
 
 var supportTopLocksCmd = cli.Command{
 	Name:         "locks",
-	Usage:        "list all active locks on a MinIO cluster",
+	Usage:        "list all active locks on a Buckit cluster",
 	Before:       setGlobalsFromContext,
 	Action:       mainSupportTopLocks,
 	OnUsageError: onUsageError,
@@ -60,7 +60,7 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. List oldest locks on a MinIO cluster.
+  1. List oldest locks on a Buckit cluster.
      {{.Prompt}} {{.HelpName}} myminio/
 `,
 }

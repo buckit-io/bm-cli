@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/minio/mc/pkg/probe"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 )
 
 type dummyErr error
@@ -59,7 +59,7 @@ var errUnrecognizedDiffType = func(diff differType) *probe.Error {
 type invalidAliasedURLErr error
 
 var errInvalidAliasedURL = func(URL string) *probe.Error {
-	msg := "Use `mc alias set mycloud " + URL + " ...` to add an alias. Use the alias for S3 operations."
+	msg := "Use `bm alias set mycloud " + URL + " ...` to add an alias. Use the alias for S3 operations."
 	return probe.NewError(invalidAliasedURLErr(errors.New(msg))).Untrace()
 }
 

@@ -28,12 +28,12 @@ import (
 	"github.com/dustin/go-humanize"
 	"github.com/dustin/go-humanize/english"
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7/pkg/set"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7/pkg/set"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminInfoFlags = []cli.Flag{
@@ -45,7 +45,7 @@ var adminInfoFlags = []cli.Flag{
 
 var adminInfoCmd = cli.Command{
 	Name:         "info",
-	Usage:        "display MinIO server information",
+	Usage:        "display Buckit server information",
 	Action:       mainAdminInfo,
 	OnUsageError: onUsageError,
 	Before:       setGlobalsFromContext,
@@ -60,7 +60,7 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Get server information of the 'play' MinIO server.
+  1. Get server information of the 'play' Buckit server.
      {{.Prompt}} {{.HelpName}} play/
 `,
 }
@@ -173,7 +173,7 @@ func (u clusterStruct) String() (msg string) {
 
 	// Loop through each server and put together info for each one
 	for _, srv := range u.Info.Servers {
-		// Check if MinIO server is not online ("Mode" field),
+		// Check if Buckit server is not online ("Mode" field),
 		if srv.State != string(madmin.ItemOnline) {
 			totalOfflineNodes++
 			// "PrintB" is color blue in console library package

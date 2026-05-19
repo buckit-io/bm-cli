@@ -22,10 +22,10 @@ import (
 
 	humanize "github.com/dustin/go-humanize"
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminDecommissionCancelCmd = cli.Command{
@@ -60,7 +60,7 @@ func checkAdminDecommissionCancelSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminDecommissionCancel is the handle for "mc admin decommission cancel" command.
+// mainAdminDecommissionCancel is the handle for "bm admin decommission cancel" command.
 func mainAdminDecommissionCancel(ctx *cli.Context) error {
 	checkAdminDecommissionCancelSyntax(ctx)
 

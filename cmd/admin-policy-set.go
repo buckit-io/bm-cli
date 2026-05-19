@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var adminPolicySetCmd = cli.Command{
@@ -30,10 +30,10 @@ var adminPolicySetCmd = cli.Command{
 	Flags:              globalFlags,
 	HideHelpCommand:    true,
 	Hidden:             true,
-	CustomHelpTemplate: `Please use 'mc admin policy attach'`,
+	CustomHelpTemplate: `Please use 'bm admin policy attach'`,
 }
 
 func mainAdminPolicySet(_ *cli.Context) error {
-	deprecatedError("mc admin policy attach")
+	deprecatedError("bm admin policy attach")
 	return nil
 }

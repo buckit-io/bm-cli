@@ -18,8 +18,8 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 )
 
 var idpLdapAccesskeyRemoveCmd = cli.Command{

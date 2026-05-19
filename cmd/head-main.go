@@ -29,8 +29,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 )
 
 var headFlags = []cli.Flag{
@@ -49,7 +49,7 @@ var headFlags = []cli.Flag{
 	},
 	cli.BoolFlag{
 		Name:  "zip",
-		Usage: "extract from remote zip file (MinIO server source only)",
+		Usage: "extract from remote zip file (Buckit server source only)",
 	},
 }
 

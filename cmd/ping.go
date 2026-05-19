@@ -32,11 +32,11 @@ import (
 	"time"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var pingFlags = []cli.Flag{
@@ -236,7 +236,7 @@ type ServerStats struct {
 
 func fetchAdminInfo(admClnt *madmin.AdminClient) (madmin.InfoMessage, error) {
 	ctx, cancel := context.WithTimeout(globalContext, 3*time.Second)
-	// Fetch the service status of the specified MinIO server
+	// Fetch the service status of the specified Buckit server
 	info, e := admClnt.ServerInfo(ctx)
 	cancel()
 	if e == nil {

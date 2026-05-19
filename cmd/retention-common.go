@@ -23,10 +23,10 @@ import (
 	"strconv"
 	"time"
 
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7"
-	"github.com/minio/pkg/v3/console"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 // Structured message depending on the type of console.

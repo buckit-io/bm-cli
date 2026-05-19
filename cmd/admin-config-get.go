@@ -25,11 +25,11 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminConfigGetCmd = cli.Command{
@@ -51,15 +51,15 @@ FLAGS:
 EXAMPLES:
   The output includes environment variables set on the server. These cannot be overridden from the client.
 
-  1. Get the current region setting on MinIO server.
+  1. Get the current region setting on Buckit server.
      {{.Prompt}} {{.HelpName}} play/ region
      region name=us-east-1
 
-  2. Get the current notification settings for Webhook target on MinIO server
+  2. Get the current notification settings for Webhook target on Buckit server
      {{.Prompt}} {{.HelpName}} myminio/ notify_webhook
      notify_webhook endpoint="http://localhost:8080" auth_token= queue_limit=10000 queue_dir="/home/events"
 
-  3. Get the current compression settings on MinIO server
+  3. Get the current compression settings on Buckit server
      {{.Prompt}} {{.HelpName}} myminio/ compression
      compression extensions=".txt,.csv" mime_types="text/*"
 `,

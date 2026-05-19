@@ -39,16 +39,16 @@ import (
 	"github.com/rjeczalik/notify"
 
 	xfilepath "github.com/minio/filepath"
-	"github.com/minio/mc/pkg/disk"
-	"github.com/minio/mc/pkg/hookreader"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7"
-	"github.com/minio/minio-go/v7/pkg/cors"
-	"github.com/minio/minio-go/v7/pkg/encrypt"
-	"github.com/minio/minio-go/v7/pkg/lifecycle"
-	"github.com/minio/minio-go/v7/pkg/notification"
-	"github.com/minio/minio-go/v7/pkg/replication"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/bm-cli/pkg/disk"
+	"github.com/buckit-io/bm-cli/pkg/hookreader"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7"
+	"github.com/buckit-io/minio-go/v7/pkg/cors"
+	"github.com/buckit-io/minio-go/v7/pkg/encrypt"
+	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
+	"github.com/buckit-io/minio-go/v7/pkg/notification"
+	"github.com/buckit-io/minio-go/v7/pkg/replication"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 // filesystem client

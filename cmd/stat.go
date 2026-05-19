@@ -28,14 +28,14 @@ import (
 	"time"
 
 	"github.com/dustin/go-humanize"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7"
-	"github.com/minio/minio-go/v7/pkg/lifecycle"
-	"github.com/minio/minio-go/v7/pkg/notification"
-	"github.com/minio/minio-go/v7/pkg/replication"
-	"github.com/minio/pkg/v3/console"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7"
+	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
+	"github.com/buckit-io/minio-go/v7/pkg/notification"
+	"github.com/buckit-io/minio-go/v7/pkg/replication"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 // contentMessage container for content message structure.
@@ -137,7 +137,7 @@ func (stat statMessage) String() (msg string) {
 			found = true
 		}
 		if !found {
-			// encryption headers are present but not something we recognize, check `mc stat --debug`
+			// encryption headers are present but not something we recognize, check `bm stat --debug`
 			// to obtain more information and understand if we are missing something.
 			msgBuilder.WriteString(fmt.Sprintf("%-10s: SSE-%s\n", "Encryption", "Unknown"))
 		}

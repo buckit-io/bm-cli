@@ -24,8 +24,8 @@ import (
 	"time"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 // stat specific flags.

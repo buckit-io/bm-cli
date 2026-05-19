@@ -19,9 +19,9 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminUserSvcAcctListCmd = cli.Command{
@@ -39,7 +39,7 @@ USAGE:
   {{.HelpName}} ALIAS TARGET-ACCOUNT
 
 TARGET-ACCOUNT:
-  Is either a MinIO user, LDAP account.
+  Is either a Buckit user, LDAP account.
 
 FLAGS:
   {{range .VisibleFlags}}{{.}}
@@ -57,7 +57,7 @@ func checkAdminUserSvcAcctListSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminUserSvcAcctList is the handle for "mc admin user svcacct ls" command.
+// mainAdminUserSvcAcctList is the handle for "bm admin user svcacct ls" command.
 func mainAdminUserSvcAcctList(ctx *cli.Context) error {
 	checkAdminUserSvcAcctListSyntax(ctx)
 

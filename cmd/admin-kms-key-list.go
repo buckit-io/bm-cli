@@ -24,10 +24,10 @@ import (
 	"github.com/fatih/color"
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/jedib0t/go-pretty/v6/text"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminKMSKeyListCmd = cli.Command{
@@ -47,12 +47,12 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Get list of master keys from a MinIO server/cluster.
+  1. Get list of master keys from a Buckit server/cluster.
      $ {{.HelpName}} play
 `,
 }
 
-// adminKMSKeyCmd is the handle for the "mc admin kms key" command.
+// adminKMSKeyCmd is the handle for the "bm admin kms key" command.
 func mainAdminKMSKeyList(ctx *cli.Context) error {
 	if len(ctx.Args()) == 0 || len(ctx.Args()) > 1 {
 		showCommandHelpAndExit(ctx, 1) // last argument is exit code

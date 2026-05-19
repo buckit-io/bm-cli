@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminPrometheusSubcommands = []cli.Command{
 	adminPrometheusGenerateCmd,
@@ -44,7 +44,7 @@ FLAGS:
 `,
 }
 
-// mainAdminPrometheus is the handle for "mc admin prometheus" command.
+// mainAdminPrometheus is the handle for "bm admin prometheus" command.
 func mainAdminPrometheus(ctx *cli.Context) error {
 	commandNotFound(ctx, adminPrometheusSubcommands)
 	return nil

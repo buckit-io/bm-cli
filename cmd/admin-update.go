@@ -26,11 +26,11 @@ import (
 	"github.com/fatih/color"
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/jedib0t/go-pretty/v6/text"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminUpdateFlags = []cli.Flag{
@@ -42,7 +42,7 @@ var adminUpdateFlags = []cli.Flag{
 
 var adminServerUpdateCmd = cli.Command{
 	Name:         "update",
-	Usage:        "update all MinIO servers",
+	Usage:        "update all Buckit servers",
 	Action:       mainAdminServerUpdate,
 	OnUsageError: onUsageError,
 	Before:       setGlobalsFromContext,
@@ -57,10 +57,10 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Update MinIO server represented by its alias 'play'.
+  1. Update Buckit server represented by its alias 'play'.
      {{.Prompt}} {{.HelpName}} play/
 
-  2. Update all MinIO servers in a distributed setup, represented by its alias 'mydist'.
+  2. Update all Buckit servers in a distributed setup, represented by its alias 'mydist'.
      {{.Prompt}} {{.HelpName}} mydist/
 `,
 }
@@ -144,7 +144,7 @@ func mainAdminServerUpdate(ctx *cli.Context) error {
 		}
 	}
 
-	// Update the specified MinIO server, optionally also
+	// Update the specified Buckit server, optionally also
 	// with the provided update URL.
 	us, e := client.ServerUpdateV2(globalContext, madmin.ServerUpdateOpts{
 		DryRun:    ctx.Bool("dry-run"),

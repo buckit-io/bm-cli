@@ -21,9 +21,9 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminUserListCmd = cli.Command{
@@ -44,7 +44,7 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. List all users on MinIO server.
+  1. List all users on Buckit server.
      {{.Prompt}} {{.HelpName}} myminio
 `,
 }
@@ -56,7 +56,7 @@ func checkAdminUserListSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminUserList is the handle for "mc admin user list" command.
+// mainAdminUserList is the handle for "bm admin user list" command.
 func mainAdminUserList(ctx *cli.Context) error {
 	checkAdminUserListSyntax(ctx)
 

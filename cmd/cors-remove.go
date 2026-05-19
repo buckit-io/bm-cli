@@ -19,8 +19,8 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var corsRemoveCmd = cli.Command{
@@ -52,7 +52,7 @@ func checkCorsRemoveSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainCorsRemove is the handle for "mc cors remove" command.
+// mainCorsRemove is the handle for "bm cors remove" command.
 func mainCorsRemove(ctx *cli.Context) error {
 	checkCorsRemoveSyntax(ctx)
 

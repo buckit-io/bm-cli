@@ -19,9 +19,9 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminUserSvcAcctRemoveCmd = cli.Command{
@@ -42,7 +42,7 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Remove a service account 'J123C4ZXEQN8RK6ND35I' from MinIO server.
+  1. Remove a service account 'J123C4ZXEQN8RK6ND35I' from Buckit server.
      {{.Prompt}} {{.HelpName}} myminio/ J123C4ZXEQN8RK6ND35I
 `,
 }
@@ -54,7 +54,7 @@ func checkAdminUserSvcAcctRemoveSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminUserSvcAcctRemove is the handle for "mc admin user svcacct rm" command.
+// mainAdminUserSvcAcctRemove is the handle for "bm admin user svcacct rm" command.
 func mainAdminUserSvcAcctRemove(ctx *cli.Context) error {
 	console.SetColor("AccMessage", color.New(color.FgGreen))
 

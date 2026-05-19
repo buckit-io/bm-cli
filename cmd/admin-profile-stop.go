@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var adminProfileStopCmd = cli.Command{
@@ -30,11 +30,11 @@ var adminProfileStopCmd = cli.Command{
 	Flags:              globalFlags,
 	HideHelpCommand:    true,
 	Hidden:             true,
-	CustomHelpTemplate: "Please use 'mc support profile stop'",
+	CustomHelpTemplate: "Please use 'bm support profile stop'",
 }
 
 // mainAdminProfileStop - the entry function of profile stop command
 func mainAdminProfileStop(_ *cli.Context) error {
-	deprecatedError("mc support profile stop")
+	deprecatedError("bm support profile stop")
 	return nil
 }

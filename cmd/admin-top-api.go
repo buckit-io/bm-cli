@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var adminTopAPIFlags = []cli.Flag{
@@ -42,18 +42,18 @@ var adminTopAPIFlags = []cli.Flag{
 
 var adminTopAPICmd = cli.Command{
 	Name:            "api",
-	Usage:           "summarize API events on MinIO server in real-time",
+	Usage:           "summarize API events on Buckit server in real-time",
 	Action:          mainAdminTopAPI,
 	OnUsageError:    onUsageError,
 	Before:          setGlobalsFromContext,
 	Flags:           append(adminTopAPIFlags, globalFlags...),
 	Hidden:          true,
 	HideHelpCommand: true,
-	CustomHelpTemplate: `Please use 'mc support top api' 
+	CustomHelpTemplate: `Please use 'bm support top api' 
 `,
 }
 
 func mainAdminTopAPI(_ *cli.Context) error {
-	deprecatedError("mc support top api")
+	deprecatedError("bm support top api")
 	return nil
 }

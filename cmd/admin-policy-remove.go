@@ -19,9 +19,9 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminPolicyRemoveCmd = cli.Command{
@@ -39,13 +39,13 @@ USAGE:
   {{.HelpName}} TARGET POLICYNAME
 
 POLICYNAME:
-  Name of the canned policy on MinIO server.
+  Name of the canned policy on Buckit server.
 
 FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Remove 'writeonly' policy on MinIO server.
+  1. Remove 'writeonly' policy on Buckit server.
      {{.Prompt}} {{.HelpName}} myminio writeonly
 `,
 }
@@ -57,7 +57,7 @@ func checkAdminPolicyRemoveSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminPolicyRemove is the handle for "mc admin policy remove" command.
+// mainAdminPolicyRemove is the handle for "bm admin policy remove" command.
 func mainAdminPolicyRemove(ctx *cli.Context) error {
 	checkAdminPolicyRemoveSyntax(ctx)
 

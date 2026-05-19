@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var adminBucketInfoFlags = []cli.Flag{}
@@ -33,8 +33,8 @@ var adminBucketInfoCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainAdminBucketInfo is the handler for "mc admin bucket info" command.
+// mainAdminBucketInfo is the handler for "bm admin bucket info" command.
 func mainAdminBucketInfo(_ *cli.Context) error {
-	deprecatedError("mc stat")
+	deprecatedError("bm stat")
 	return nil
 }

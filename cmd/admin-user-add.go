@@ -24,10 +24,10 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 	"golang.org/x/term"
 )
 
@@ -54,22 +54,22 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Add a new user 'foobar' to MinIO server.
+  1. Add a new user 'foobar' to Buckit server.
      {{.DisableHistory}}
      {{.Prompt}} {{.HelpName}} myminio foobar foo12345
      {{.EnableHistory}}
 
-  2. Add a new user 'foobar' to MinIO server, prompting for keys.
+  2. Add a new user 'foobar' to Buckit server, prompting for keys.
      {{.Prompt}} {{.HelpName}} myminio
      Enter Access Key: foobar
      Enter Secret Key: foobar12345
 
-  3. Add a new user 'foobar' to MinIO server using piped keys.
+  3. Add a new user 'foobar' to Buckit server using piped keys.
      {{.DisableHistory}}
      {{.Prompt}} echo -e "foobar\nfoobar12345" | {{.HelpName}} myminio
      {{.EnableHistory}}
 
-  4. Add a new user 'foobar' to MinIO server, then attach IAM policy "writeonly".
+  4. Add a new user 'foobar' to Buckit server, then attach IAM policy "writeonly".
      {{.Prompt}} {{.HelpName}} myminio foobar foo12345 
      {{.Prompt}} mc admin policy attach myminio writeonly --user foobar
 `,
@@ -186,7 +186,7 @@ func fetchUserKeys(args cli.Args) (string, string) {
 	return accessKey, secretKey
 }
 
-// mainAdminUserAdd is the handle for "mc admin user add" command.
+// mainAdminUserAdd is the handle for "bm admin user add" command.
 func mainAdminUserAdd(ctx *cli.Context) error {
 	checkAdminUserAddSyntax(ctx)
 

@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var adminTierCmd = cli.Command{
@@ -32,8 +32,8 @@ var adminTierCmd = cli.Command{
 	Subcommands:     adminTierDepCmds,
 }
 
-// mainAdminTier is the handle for "mc admin tier" command.
+// mainAdminTier is the handle for "bm admin tier" command.
 func mainAdminTier(_ *cli.Context) error {
-	deprecatedError("mc ilm tier")
+	deprecatedError("bm ilm tier")
 	return nil
 }

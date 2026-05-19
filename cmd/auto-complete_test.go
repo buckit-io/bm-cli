@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 func TestAutoCompletionCompletness(t *testing.T) {

@@ -22,10 +22,10 @@ import (
 	"os"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminConfigImportCmd = cli.Command{
@@ -45,7 +45,7 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Import the new local config and apply to the MinIO server
+  1. Import the new local config and apply to the Buckit server
      {{.Prompt}} {{.HelpName}} play/ < config.txt
 `,
 }
@@ -60,7 +60,7 @@ type configImportMessage struct {
 func (u configImportMessage) String() (msg string) {
 	msg += console.Colorize("SetConfigSuccess",
 		"Setting new key has been successful.\n")
-	suggestion := fmt.Sprintf("mc admin service restart %s", u.targetAlias)
+	suggestion := fmt.Sprintf("bm admin service restart %s", u.targetAlias)
 	msg += console.Colorize("SetConfigSuccess",
 		fmt.Sprintf("Please restart your server with `%s`.\n", suggestion))
 	return msg

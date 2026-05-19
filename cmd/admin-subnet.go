@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var subnetHealthSubcommands = []cli.Command{
@@ -36,9 +36,9 @@ var adminSubnetCmd = cli.Command{
 	Hidden:      true,
 }
 
-// mainAdminSubnet is the handle for "mc admin subnet" command.
+// mainAdminSubnet is the handle for "bm admin subnet" command.
 func mainAdminSubnet(_ *cli.Context) error {
-	deprecatedError("mc support")
+	deprecatedError("bm support")
 	return nil
 	// Sub-commands like "health", "register" have their own main.
 }

@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var adminConsoleFlags = []cli.Flag{
@@ -46,12 +46,12 @@ var adminConsoleCmd = cli.Command{
 	Flags:              append(adminConsoleFlags, globalFlags...),
 	Hidden:             true,
 	HideHelpCommand:    true,
-	CustomHelpTemplate: "This command is not supported now and replaced by 'admin logs' command. Please use 'mc admin logs'.\n",
+	CustomHelpTemplate: "This command is not supported now and replaced by 'admin logs' command. Please use 'bm admin logs'.\n",
 }
 
 // mainAdminConsole - the entry function of console command
 func mainAdminConsole(ctx *cli.Context) error {
-	newCmd := []string{"mc admin logs"}
+	newCmd := []string{"bm admin logs"}
 
 	var flgStr string
 

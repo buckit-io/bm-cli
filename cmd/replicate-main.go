@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var replicateSubcommands = []cli.Command{
 	replicateAddCmd,
@@ -41,7 +41,7 @@ var replicateCmd = cli.Command{
 	Subcommands:     replicateSubcommands,
 }
 
-// mainReplicate is the handle for "mc replicate" command.
+// mainReplicate is the handle for "bm replicate" command.
 func mainReplicate(ctx *cli.Context) error {
 	commandNotFound(ctx, replicateSubcommands)
 	return nil

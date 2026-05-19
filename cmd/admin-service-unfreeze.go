@@ -21,15 +21,15 @@ import (
 	"context"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminServiceUnfreezeCmd = cli.Command{
 	Name:         "unfreeze",
-	Usage:        "unfreeze S3 API calls on MinIO cluster",
+	Usage:        "unfreeze S3 API calls on Buckit cluster",
 	Action:       mainAdminServiceUnfreeze,
 	OnUsageError: onUsageError,
 	Before:       setGlobalsFromContext,
@@ -44,7 +44,7 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Unfreeze all S3 API calls on MinIO server at 'myminio/'.
+  1. Unfreeze all S3 API calls on Buckit server at 'myminio/'.
      {{.Prompt}} {{.HelpName}} myminio/
 `,
 }
@@ -93,7 +93,7 @@ func mainAdminServiceUnfreeze(ctx *cli.Context) error {
 	ctxt, cancel := context.WithCancel(globalContext)
 	defer cancel()
 
-	// Unfreeze the specified MinIO server
+	// Unfreeze the specified Buckit server
 	e := client.ServiceUnfreezeV2(ctxt)
 	if e != nil {
 		// Attempt an older API server might be old
@@ -101,7 +101,7 @@ func mainAdminServiceUnfreeze(ctx *cli.Context) error {
 		// we need this fallback
 		e = client.ServiceUnfreeze(ctxt)
 	}
-	// Unfreeze the specified MinIO server
+	// Unfreeze the specified Buckit server
 	fatalIf(probe.NewError(e), "Unable to unfreeze the server.")
 
 	// Success..

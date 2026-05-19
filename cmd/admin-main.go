@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminFlags = []cli.Flag{}
 
@@ -61,7 +61,7 @@ var adminCmdSubcommands = []cli.Command{
 
 var adminCmd = cli.Command{
 	Name:            "admin",
-	Usage:           "manage MinIO servers",
+	Usage:           "manage Buckit servers",
 	Action:          mainAdmin,
 	Subcommands:     adminCmdSubcommands,
 	HideHelpCommand: true,
@@ -71,7 +71,7 @@ var adminCmd = cli.Command{
 
 const dateTimeFormatFilename = "2006-01-02T15-04-05.999999-07-00"
 
-// mainAdmin is the handle for "mc admin" command.
+// mainAdmin is the handle for "bm admin" command.
 func mainAdmin(ctx *cli.Context) error {
 	commandNotFound(ctx, adminCmdSubcommands)
 	return nil

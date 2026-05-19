@@ -25,11 +25,11 @@ import (
 	"syscall"
 
 	"github.com/dustin/go-humanize"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 func defaultPartSize() string {
@@ -109,7 +109,7 @@ EXAMPLES:
   6. Write contents of stdin to an object on Amazon S3 cloud storage and assign REDUCED_REDUNDANCY storage-class to the uploaded object.
      {{.Prompt}} {{.HelpName}} --storage-class REDUCED_REDUNDANCY s3/personalbuck/meeting-notes.txt
 
-  7. Copy to MinIO cloud storage with specified metadata, separated by ";"
+  7. Copy to Buckit cloud storage with specified metadata, separated by ";"
       {{.Prompt}} cat music.mp3 | {{.HelpName}} --attr "Cache-Control=max-age=90000,min-fresh=9000;Artist=Unknown" play/mybucket/music.mp3
 
   8. Set tags to the uploaded objects

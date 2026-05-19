@@ -38,11 +38,11 @@ import (
 
 	"github.com/fatih/color"
 	"github.com/mattn/go-isatty"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/env"
-	"github.com/minio/selfupdate"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/env"
+	"github.com/buckit-io/selfupdate"
 )
 
 // Check for new software updates.
@@ -194,7 +194,7 @@ func IsSourceBuild() bool {
 //	mc (<OS>; <ARCH>[; dcos][; kubernetes][; docker][; source]) mc/<VERSION> mc/<RELEASE-TAG> mc/<COMMIT-ID>
 //
 // Any change here should be discussed by opening an issue at
-// https://github.com/minio/mc/issues.
+// https://github.com/buckit-io/bm-cli/issues.
 func getUserAgent() string {
 	userAgentParts := []string{}
 	// Helper function to concisely append a pair of strings to a
@@ -426,7 +426,7 @@ func getUpdateReaderFromURL(u *url.URL, transport http.RoundTripper) (io.ReadClo
 func doUpdate(customReleaseURL, sha256Hex string, latestReleaseTime time.Time, releaseTag string, ok bool) (updateStatusMsg string, err *probe.Error) {
 	fmtReleaseTime := latestReleaseTime.Format(mcReleaseTagTimeLayout)
 	if !ok {
-		updateStatusMsg = colorGreenBold("mc update to version %s canceled.",
+		updateStatusMsg = colorGreenBold("bm update to version %s canceled.",
 			releaseTag)
 		return updateStatusMsg, nil
 	}
@@ -466,7 +466,7 @@ func doUpdate(customReleaseURL, sha256Hex string, latestReleaseTime time.Time, r
 
 	if e := opts.CheckPermissions(); e != nil {
 		permErrMsg := fmt.Sprintf(" failed with: %s", e)
-		updateStatusMsg = colorYellowBold("mc update to version RELEASE.%s %s.",
+		updateStatusMsg = colorYellowBold("bm update to version RELEASE.%s %s.",
 			fmtReleaseTime, permErrMsg)
 		return updateStatusMsg, nil
 	}
@@ -474,14 +474,14 @@ func doUpdate(customReleaseURL, sha256Hex string, latestReleaseTime time.Time, r
 	if e = selfupdate.Apply(rc, opts); e != nil {
 		if re := selfupdate.RollbackError(e); re != nil {
 			rollBackErr := fmt.Sprintf("Failed to rollback from bad update: %v", re)
-			updateStatusMsg = colorYellowBold("mc update to version RELEASE.%s %s.", fmtReleaseTime, rollBackErr)
+			updateStatusMsg = colorYellowBold("bm update to version RELEASE.%s %s.", fmtReleaseTime, rollBackErr)
 			return updateStatusMsg, probe.NewError(e)
 		}
 
 		var pathErr *os.PathError
 		if errors.As(e, &pathErr) {
 			pathErrMsg := fmt.Sprintf("Unable to update the binary at %s: %v", filepath.Dir(pathErr.Path), pathErr.Err)
-			updateStatusMsg = colorYellowBold("mc update to version RELEASE.%s %s.",
+			updateStatusMsg = colorYellowBold("bm update to version RELEASE.%s %s.",
 				fmtReleaseTime, pathErrMsg)
 			return updateStatusMsg, nil
 		}
@@ -489,7 +489,7 @@ func doUpdate(customReleaseURL, sha256Hex string, latestReleaseTime time.Time, r
 		return colorYellowBold(fmt.Sprintf("Error in mc update to version RELEASE.%s %v.", fmtReleaseTime, e)), nil
 	}
 
-	return colorGreenBold("mc updated to version RELEASE.%s successfully.", fmtReleaseTime), nil
+	return colorGreenBold("bm updated to version RELEASE.%s successfully.", fmtReleaseTime), nil
 }
 
 type updateMessage struct {

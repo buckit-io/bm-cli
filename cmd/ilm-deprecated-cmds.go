@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var ilmDepCmds = []cli.Command{
 	ilmDepAddCmd,
@@ -33,7 +33,7 @@ var (
 		Name:         "add",
 		Usage:        "add a lifecycle configuration rule for a bucket",
 		Action:       mainILMAdd,
-		Hidden:       true, // to avoid being listed in `mc ilm`
+		Hidden:       true, // to avoid being listed in `bm ilm`
 		OnUsageError: onUsageError,
 		Before:       setGlobalsFromContext,
 		Flags:        append(ilmAddFlags, globalFlags...),
@@ -74,7 +74,7 @@ EXAMPLES:
 		Name:         "rm",
 		Usage:        "remove (if any) existing lifecycle configuration rule",
 		Action:       mainILMRemove,
-		Hidden:       true, // to avoid being listed in `mc ilm`
+		Hidden:       true, // to avoid being listed in `bm ilm`
 		OnUsageError: onUsageError,
 		Before:       setGlobalsFromContext,
 		Flags:        append(ilmRemoveFlags, globalFlags...),
@@ -105,7 +105,7 @@ EXAMPLES:
 		Name:         "edit",
 		Usage:        "modify a lifecycle configuration rule with given id",
 		Action:       mainILMEdit,
-		Hidden:       true, // to avoid being listed in `mc ilm`
+		Hidden:       true, // to avoid being listed in `bm ilm`
 		OnUsageError: onUsageError,
 		Before:       setGlobalsFromContext,
 		Flags:        append(ilmEditFlags, globalFlags...),
@@ -139,7 +139,7 @@ EXAMPLES:
 		Name:         "ls",
 		Usage:        "lists lifecycle configuration rules set on a bucket",
 		Action:       mainILMList,
-		Hidden:       true, // to avoid being listed in `mc ilm`
+		Hidden:       true, // to avoid being listed in `bm ilm`
 		OnUsageError: onUsageError,
 		Before:       setGlobalsFromContext,
 		Flags:        append(ilmListFlags, globalFlags...),
@@ -174,7 +174,7 @@ EXAMPLES:
 		Name:         "export",
 		Usage:        "export lifecycle configuration in JSON format",
 		Action:       mainILMExport,
-		Hidden:       true, // to avoid being listed in `mc ilm`
+		Hidden:       true, // to avoid being listed in `bm ilm`
 		OnUsageError: onUsageError,
 		Before:       setGlobalsFromContext,
 		Flags:        globalFlags,
@@ -200,7 +200,7 @@ EXAMPLES:
 		Name:         "import",
 		Usage:        "import lifecycle configuration in JSON format",
 		Action:       mainILMImport,
-		Hidden:       true, // to avoid being listed in `mc ilm`
+		Hidden:       true, // to avoid being listed in `bm ilm`
 		OnUsageError: onUsageError,
 		Before:       setGlobalsFromContext,
 		Flags:        globalFlags,

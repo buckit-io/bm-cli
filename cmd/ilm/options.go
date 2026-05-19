@@ -25,9 +25,9 @@ import (
 	"strings"
 
 	"github.com/dustin/go-humanize"
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7/pkg/lifecycle"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
 	"github.com/rs/xid"
 )
 
@@ -318,7 +318,7 @@ func GetLifecycleOptions(ctx *cli.Context) (LifecycleOptions, *probe.Error) {
 		return LifecycleOptions{}, probe.NewError(errors.New("noncurrentversion-transition-days must be set"))
 	}
 	// for MinIO transition storage-class is same as label defined on
-	// `mc admin bucket remote add --service ilm --label` command
+	// `bm admin bucket remote add --service ilm --label` command
 	if ctx.IsSet("tags") {
 		tags = strPtr(ctx.String("tags"))
 	}

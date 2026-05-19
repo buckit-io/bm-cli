@@ -19,10 +19,10 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var quotaClearCmd = cli.Command{
@@ -54,7 +54,7 @@ func checkQuotaClearSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainQuotaClear is the handler for "mc quota clear" command.
+// mainQuotaClear is the handler for "bm quota clear" command.
 func mainQuotaClear(ctx *cli.Context) error {
 	checkQuotaClearSyntax(ctx)
 

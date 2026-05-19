@@ -19,9 +19,9 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminPolicyListCmd = cli.Command{
@@ -42,7 +42,7 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. List all policies on MinIO server.
+  1. List all policies on Buckit server.
      {{.Prompt}} {{.HelpName}} myminio
 `,
 }
@@ -54,7 +54,7 @@ func checkAdminPolicyListSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminPolicyList is the handle for "mc admin policy add" command.
+// mainAdminPolicyList is the handle for "bm admin policy add" command.
 func mainAdminPolicyList(ctx *cli.Context) error {
 	checkAdminPolicyListSyntax(ctx)
 

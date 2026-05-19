@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminServiceSubcommands = []cli.Command{
 	adminServiceRestartCmd,
@@ -28,7 +28,7 @@ var adminServiceSubcommands = []cli.Command{
 
 var adminServiceCmd = cli.Command{
 	Name:            "service",
-	Usage:           "restart or unfreeze a MinIO cluster",
+	Usage:           "restart or unfreeze a Buckit cluster",
 	Action:          mainAdminService,
 	Before:          setGlobalsFromContext,
 	Flags:           globalFlags,
@@ -36,7 +36,7 @@ var adminServiceCmd = cli.Command{
 	Subcommands:     adminServiceSubcommands,
 }
 
-// mainAdmin is the handle for "mc admin service" command.
+// mainAdmin is the handle for "bm admin service" command.
 func mainAdminService(ctx *cli.Context) error {
 	commandNotFound(ctx, adminServiceSubcommands)
 	return nil

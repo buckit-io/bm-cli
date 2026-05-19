@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var adminProfileStartCmd = cli.Command{
@@ -29,11 +29,11 @@ var adminProfileStartCmd = cli.Command{
 	Before:             setGlobalsFromContext,
 	HideHelpCommand:    true,
 	Hidden:             true,
-	CustomHelpTemplate: "Please use 'mc support profile start'",
+	CustomHelpTemplate: "Please use 'bm support profile start'",
 }
 
 // mainAdminProfileStart - the entry function of profile command
 func mainAdminProfileStart(_ *cli.Context) error {
-	deprecatedError("mc support profile start")
+	deprecatedError("bm support profile start")
 	return nil
 }

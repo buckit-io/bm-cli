@@ -19,9 +19,9 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var quotaInfoCmd = cli.Command{
@@ -53,7 +53,7 @@ func checkQuotaInfoSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainQuotaInfo is the handler for "mc quota info" command.
+// mainQuotaInfo is the handler for "bm quota info" command.
 func mainQuotaInfo(ctx *cli.Context) error {
 	checkQuotaInfoSyntax(ctx)
 

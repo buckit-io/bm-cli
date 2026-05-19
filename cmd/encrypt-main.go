@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var encryptSubcommands = []cli.Command{
 	encryptSetCmd,
@@ -35,7 +35,7 @@ var encryptCmd = cli.Command{
 	Subcommands:     encryptSubcommands,
 }
 
-// mainEncrypt is the handle for "mc encrypt" command.
+// mainEncrypt is the handle for "bm encrypt" command.
 func mainEncrypt(ctx *cli.Context) error {
 	commandNotFound(ctx, encryptSubcommands)
 	return nil

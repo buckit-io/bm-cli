@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var supportTopSubcommands = []cli.Command{
 	supportTopAPICmd,
@@ -37,7 +37,7 @@ var supportTopCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainSupportTop is the handle for "mc support top" command.
+// mainSupportTop is the handle for "bm support top" command.
 func mainSupportTop(ctx *cli.Context) error {
 	commandNotFound(ctx, supportTopSubcommands)
 	return nil

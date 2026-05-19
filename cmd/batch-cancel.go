@@ -22,10 +22,10 @@ import (
 	"fmt"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var batchCancelFlags = []cli.Flag{
@@ -84,7 +84,7 @@ func checkBatchCancelSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainBatchCancel is the handle for "mc batch cancel" command.
+// mainBatchCancel is the handle for "bm batch cancel" command.
 func mainBatchCancel(ctx *cli.Context) error {
 	checkBatchCancelSyntax(ctx)
 

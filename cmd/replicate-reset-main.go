@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var replicateResyncSubcommands = []cli.Command{
 	replicateResyncStartCmd,
@@ -36,7 +36,7 @@ var replicateResyncCmd = cli.Command{
 	HiddenAliases:   true,
 }
 
-// mainReplicateResync is the handle for "mc replicate resync" command.
+// mainReplicateResync is the handle for "bm replicate resync" command.
 func mainReplicateResync(ctx *cli.Context) error {
 	commandNotFound(ctx, replicateResyncSubcommands)
 	return nil

@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminConfigSubcommands = []cli.Command{
 	adminConfigGetCmd,
@@ -31,7 +31,7 @@ var adminConfigSubcommands = []cli.Command{
 
 var adminConfigCmd = cli.Command{
 	Name:            "config",
-	Usage:           "manage MinIO server configuration",
+	Usage:           "manage Buckit server configuration",
 	Action:          mainAdminConfig,
 	Before:          setGlobalsFromContext,
 	Flags:           globalFlags,
@@ -39,7 +39,7 @@ var adminConfigCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainAdminConfig is the handle for "mc admin config" command.
+// mainAdminConfig is the handle for "bm admin config" command.
 func mainAdminConfig(ctx *cli.Context) error {
 	commandNotFound(ctx, adminConfigSubcommands)
 	return nil

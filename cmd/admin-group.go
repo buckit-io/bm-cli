@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminGroupSubcommands = []cli.Command{
 	adminGroupAddCmd,
@@ -38,7 +38,7 @@ var adminGroupCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainAdminGroup is the handle for "mc admin config" command.
+// mainAdminGroup is the handle for "bm admin config" command.
 func mainAdminGroup(ctx *cli.Context) error {
 	commandNotFound(ctx, adminGroupSubcommands)
 	return nil

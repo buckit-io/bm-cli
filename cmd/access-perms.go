@@ -20,8 +20,8 @@ package cmd
 import (
 	"os"
 
-	json "github.com/minio/colorjson"
-	"github.com/minio/minio-go/v7/pkg/policy"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/minio-go/v7/pkg/policy"
 )
 
 // isValidAccessPERM - is provided access perm string supported.

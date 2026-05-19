@@ -30,8 +30,8 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 )
 
 var catFlags = []cli.Flag{
@@ -45,7 +45,7 @@ var catFlags = []cli.Flag{
 	},
 	cli.BoolFlag{
 		Name:  "zip",
-		Usage: "extract from remote zip file (MinIO server source only)",
+		Usage: "extract from remote zip file (Buckit server source only)",
 	},
 	cli.Int64Flag{
 		Name:  "offset",

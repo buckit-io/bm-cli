@@ -26,10 +26,10 @@ import (
 	"time"
 
 	"github.com/mattn/go-ieproxy"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/httptracer"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7/pkg/credentials"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/httptracer"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7/pkg/credentials"
 )
 
 // NewAdminFactory encloses New function with client cache.

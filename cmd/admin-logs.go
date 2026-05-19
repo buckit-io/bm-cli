@@ -24,11 +24,11 @@ import (
 	"time"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 const logTimeFormat string = "15:04:05 MST 01/02/2006"
@@ -62,11 +62,11 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Show logs for a MinIO server with alias 'myminio'
+  1. Show logs for a Buckit server with alias 'myminio'
      {{.Prompt}} {{.HelpName}} myminio
-  2. Show last 5 log entries for node 'node1' for a MinIO server with alias 'myminio'
+  2. Show last 5 log entries for node 'node1' for a Buckit server with alias 'myminio'
      {{.Prompt}} {{.HelpName}} --last 5 myminio node1
-  3. Show application errors in logs for a MinIO server with alias 'myminio'
+  3. Show application errors in logs for a Buckit server with alias 'myminio'
      {{.Prompt}} {{.HelpName}} --type application myminio
 `,
 }

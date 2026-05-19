@@ -19,8 +19,8 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var corsGetCmd = cli.Command{
@@ -52,7 +52,7 @@ func checkCorsGetSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainCorsGet is the handle for "mc cors get" command.
+// mainCorsGet is the handle for "bm cors get" command.
 func mainCorsGet(ctx *cli.Context) error {
 	checkCorsGetSyntax(ctx)
 

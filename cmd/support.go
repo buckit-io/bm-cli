@@ -21,12 +21,12 @@ import (
 	"fmt"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7/pkg/set"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7/pkg/set"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 const (
@@ -180,7 +180,7 @@ func toJSON(obj any) string {
 	return string(jsonBytes)
 }
 
-// mainSupport is the handle for "mc support" command.
+// mainSupport is the handle for "bm support" command.
 func mainSupport(ctx *cli.Context) error {
 	commandNotFound(ctx, supportSubcommands)
 	return nil

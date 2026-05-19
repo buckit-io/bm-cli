@@ -22,10 +22,10 @@ import (
 	"os"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var licenseUpdateCmd = cli.Command{
@@ -101,7 +101,7 @@ func performLicenseRenew(alias string) licUpdateMessage {
 	fatalIf(probe.NewError(e), "Error getting subnet creds")
 
 	if len(apiKey) == 0 {
-		errMsg := fmt.Sprintf("Please register the cluster first by running 'mc license register %s'", alias)
+		errMsg := fmt.Sprintf("Please register the cluster first by running 'bm license register %s'", alias)
 		fatal(errDummy().Trace(), errMsg)
 	}
 

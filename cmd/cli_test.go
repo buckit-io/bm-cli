@@ -20,7 +20,7 @@ package cmd
 import (
 	"testing"
 
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 func TestCLIOnUsageError(t *testing.T) {

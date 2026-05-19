@@ -21,8 +21,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 )
 
 var batchDescribeCmd = cli.Command{
@@ -54,7 +54,7 @@ func checkBatchDescribeSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainBatchDescribe is the handle for "mc batch create" command.
+// mainBatchDescribe is the handle for "bm batch create" command.
 func mainBatchDescribe(ctx *cli.Context) error {
 	checkBatchDescribeSyntax(ctx)
 

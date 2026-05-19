@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var batchSubcommands = []cli.Command{
 	batchGenerateCmd,
@@ -39,7 +39,7 @@ var batchCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainBatch is the handle for "mc batch" command.
+// mainBatch is the handle for "bm batch" command.
 func mainBatch(ctx *cli.Context) error {
 	commandNotFound(ctx, batchSubcommands)
 	return nil

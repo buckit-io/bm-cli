@@ -22,11 +22,11 @@ import (
 	"time"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 
-	json "github.com/minio/colorjson"
+	json "github.com/buckit-io/colorjson"
 	yaml "gopkg.in/yaml.v2"
 )
 
@@ -257,7 +257,7 @@ func generatePrometheusConfig(ctx *cli.Context) error {
 	return nil
 }
 
-// mainAdminPrometheus is the handle for "mc admin prometheus generate" sub-command.
+// mainAdminPrometheus is the handle for "bm admin prometheus generate" sub-command.
 func mainAdminPrometheusGenerate(ctx *cli.Context) error {
 	console.SetColor("yaml", color.New(color.FgGreen))
 

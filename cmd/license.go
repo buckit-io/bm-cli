@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var licenseSubcommands = []cli.Command{
@@ -38,7 +38,7 @@ var licenseCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainlicense is the handle for "mc license" command.
+// mainlicense is the handle for "bm license" command.
 func mainlicense(ctx *cli.Context) error {
 	commandNotFound(ctx, licenseSubcommands)
 	return nil

@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminTierDepCmds = []cli.Command{
 	adminTierDepInfoCmd,

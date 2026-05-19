@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var eventFlags = []cli.Flag{}
 
@@ -37,7 +37,7 @@ var eventCmd = cli.Command{
 	Subcommands:     eventSubcommands,
 }
 
-// mainEvent is the handle for "mc event" command.
+// mainEvent is the handle for "bm event" command.
 func mainEvent(ctx *cli.Context) error {
 	commandNotFound(ctx, eventSubcommands)
 	return nil

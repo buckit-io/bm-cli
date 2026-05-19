@@ -24,9 +24,9 @@ import (
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/dustin/go-humanize"
-	"github.com/minio/cli"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 )
 
 var adminSpeedtestCmd = cli.Command{
@@ -37,11 +37,11 @@ var adminSpeedtestCmd = cli.Command{
 	Before:             setGlobalsFromContext,
 	HideHelpCommand:    true,
 	Hidden:             true,
-	CustomHelpTemplate: "Please use 'mc support perf'",
+	CustomHelpTemplate: "Please use 'bm support perf'",
 }
 
 func mainAdminSpeedtest(_ *cli.Context) error {
-	deprecatedError("mc support perf")
+	deprecatedError("bm support perf")
 	return nil
 }
 

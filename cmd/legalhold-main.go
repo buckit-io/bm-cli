@@ -24,11 +24,11 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	minio "github.com/minio/minio-go/v7"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	minio "github.com/buckit-io/minio-go/v7"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var legalHoldSubcommands = []cli.Command{

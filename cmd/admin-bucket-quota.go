@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var adminQuotaFlags = []cli.Flag{
@@ -42,8 +42,8 @@ var adminBucketQuotaCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainAdminBucketQuota is the handler for "mc admin bucket quota" command.
+// mainAdminBucketQuota is the handler for "bm admin bucket quota" command.
 func mainAdminBucketQuota(_ *cli.Context) error {
-	deprecatedError("mc quota")
+	deprecatedError("bm quota")
 	return nil
 }

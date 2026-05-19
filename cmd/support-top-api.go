@@ -21,9 +21,9 @@ import (
 	"context"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/minio/cli"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 )
 
 var supportTopAPIFlags = []cli.Flag{
@@ -47,7 +47,7 @@ var supportTopAPIFlags = []cli.Flag{
 
 var supportTopAPICmd = cli.Command{
 	Name:            "api",
-	Usage:           "summarize API events on MinIO server in real-time",
+	Usage:           "summarize API events on Buckit server in real-time",
 	Action:          mainSupportTopAPI,
 	OnUsageError:    onUsageError,
 	Before:          setGlobalsFromContext,

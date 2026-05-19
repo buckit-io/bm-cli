@@ -19,15 +19,15 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminServiceFreezeCmd = cli.Command{
 	Name:         "freeze",
-	Usage:        "freeze S3 API calls on MinIO cluster",
+	Usage:        "freeze S3 API calls on Buckit cluster",
 	Action:       mainAdminServiceFreeze,
 	OnUsageError: onUsageError,
 	Before:       setGlobalsFromContext,
@@ -43,7 +43,7 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Freeze all S3 API calls on MinIO server at 'myminio/'.
+  1. Freeze all S3 API calls on Buckit server at 'myminio/'.
      {{.Prompt}} {{.HelpName}} myminio/
 `,
 }
@@ -89,7 +89,7 @@ func mainAdminServiceFreeze(ctx *cli.Context) error {
 	client, err := newAdminClient(aliasedURL)
 	fatalIf(err, "Unable to initialize admin connection.")
 
-	// Freeze the specified MinIO server
+	// Freeze the specified Buckit server
 	fatalIf(probe.NewError(client.ServiceFreezeV2(globalContext)), "Unable to freeze the server.")
 
 	// Success..

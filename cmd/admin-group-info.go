@@ -19,9 +19,9 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminGroupInfoCmd = cli.Command{
@@ -53,7 +53,7 @@ func checkAdminGroupInfoSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminGroupInfo is the handle for "mc admin group info" command.
+// mainAdminGroupInfo is the handle for "bm admin group info" command.
 func mainAdminGroupInfo(ctx *cli.Context) error {
 	checkAdminGroupInfoSyntax(ctx)
 

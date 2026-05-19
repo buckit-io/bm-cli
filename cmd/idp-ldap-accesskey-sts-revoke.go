@@ -18,9 +18,9 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 )
 
 var idpLdapAccesskeySTSRevokeCmd = cli.Command{
@@ -59,7 +59,7 @@ EXAMPLES:
 `,
 }
 
-// mainIdpLdapAccesskeySTSRevoke is the handle for "mc idp ldap accesskey sts-revoke" command.
+// mainIdpLdapAccesskeySTSRevoke is the handle for "bm idp ldap accesskey sts-revoke" command.
 func mainIdpLdapAccesskeySTSRevoke(ctx *cli.Context) error {
 	checkSTSRevokeSyntax(ctx)
 

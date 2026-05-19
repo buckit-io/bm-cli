@@ -21,9 +21,9 @@ import (
 	"fmt"
 	"net/url"
 
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 // profile command flags.
@@ -102,7 +102,7 @@ func checkSupportUploadSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainSupportUpload is the handle for "mc support upload" command.
+// mainSupportUpload is the handle for "bm support upload" command.
 func mainSupportUpload(ctx *cli.Context) error {
 	// Check for command syntax
 	checkSupportUploadSyntax(ctx)

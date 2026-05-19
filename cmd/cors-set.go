@@ -22,11 +22,11 @@ import (
 	"os"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7/pkg/cors"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7/pkg/cors"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var corsSetCmd = cli.Command{
@@ -96,7 +96,7 @@ func checkCorsSetSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainCorsSet is the handle for "mc cors set" command.
+// mainCorsSet is the handle for "bm cors set" command.
 func mainCorsSet(ctx *cli.Context) error {
 	checkCorsSetSyntax(ctx)
 

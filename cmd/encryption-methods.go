@@ -26,9 +26,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7/pkg/encrypt"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7/pkg/encrypt"
 )
 
 type sseKeyType int

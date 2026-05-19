@@ -19,10 +19,10 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminUserSvcAcctEnableCmd = cli.Command{
@@ -42,7 +42,7 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Enable a service account 'J123C4ZXEQN8RK6ND35I' on MinIO server.
+  1. Enable a service account 'J123C4ZXEQN8RK6ND35I' on Buckit server.
      {{.Prompt}} {{.HelpName}} myminio/ J123C4ZXEQN8RK6ND35I
 `,
 }
@@ -54,7 +54,7 @@ func checkAdminUserSvcAcctEnableSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminUserSvcAcctEnable is the handle for "mc admin user svcacct enable" command.
+// mainAdminUserSvcAcctEnable is the handle for "bm admin user svcacct enable" command.
 func mainAdminUserSvcAcctEnable(ctx *cli.Context) error {
 	checkAdminUserSvcAcctEnableSyntax(ctx)
 

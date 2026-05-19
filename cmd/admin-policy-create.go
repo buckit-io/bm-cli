@@ -22,11 +22,11 @@ import (
 	"os"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminPolicyCreateCmd = cli.Command{
@@ -43,7 +43,7 @@ USAGE:
   {{.HelpName}} TARGET POLICYNAME POLICYFILE
 
 POLICYNAME:
-  Name of the canned policy on MinIO server.
+  Name of the canned policy on Buckit server.
 
 POLICYFILE:
   Name of the policy file associated with the policy name.
@@ -116,7 +116,7 @@ func (u userPolicyMessage) JSON() string {
 	return string(jsonMessageBytes)
 }
 
-// mainAdminPolicyCreate is the handle for "mc admin policy create" command.
+// mainAdminPolicyCreate is the handle for "bm admin policy create" command.
 func mainAdminPolicyCreate(ctx *cli.Context) error {
 	checkAdminPolicyCreateSyntax(ctx)
 

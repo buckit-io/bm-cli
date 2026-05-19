@@ -22,11 +22,11 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
-	"github.com/minio/pkg/v3/policy"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
+	"github.com/buckit-io/pkg/v3/policy"
 )
 
 var adminUserSTSAcctSubcommands = []cli.Command{
@@ -43,7 +43,7 @@ var adminUserSTSAcctCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainAdminUserSTSAcct is the handle for "mc admin user sts" command.
+// mainAdminUserSTSAcct is the handle for "bm admin user sts" command.
 func mainAdminUserSTSAcct(ctx *cli.Context) error {
 	commandNotFound(ctx, adminUserSTSAcctSubcommands)
 	return nil
@@ -85,7 +85,7 @@ func checkAdminUserSTSAcctInfoSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminUserSTSAcctInfo is the handle for "mc admin user sts info" command.
+// mainAdminUserSTSAcctInfo is the handle for "bm admin user sts info" command.
 func mainAdminUserSTSAcctInfo(ctx *cli.Context) error {
 	checkAdminUserSTSAcctInfoSyntax(ctx)
 

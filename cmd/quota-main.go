@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var quotaSubcommands = []cli.Command{
 	quotaSetCmd,
@@ -35,7 +35,7 @@ var quotaCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainQuota is the handle for "mc quota" command.
+// mainQuota is the handle for "bm quota" command.
 func mainQuota(ctx *cli.Context) error {
 	commandNotFound(ctx, quotaSubcommands)
 	return nil

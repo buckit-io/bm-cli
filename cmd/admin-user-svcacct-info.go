@@ -22,11 +22,11 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
-	"github.com/minio/pkg/v3/policy"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
+	"github.com/buckit-io/pkg/v3/policy"
 )
 
 var adminUserSvcAcctInfoFlags = []cli.Flag{
@@ -65,7 +65,7 @@ func checkAdminUserSvcAcctInfoSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminUserSvcAcctInfo is the handle for "mc admin user svcacct info" command.
+// mainAdminUserSvcAcctInfo is the handle for "bm admin user svcacct info" command.
 func mainAdminUserSvcAcctInfo(ctx *cli.Context) error {
 	checkAdminUserSvcAcctInfoSyntax(ctx)
 

@@ -24,10 +24,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/minio/cli"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/policy"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/policy"
 )
 
 var idpLdapAccesskeyEditFlags = []cli.Flag{

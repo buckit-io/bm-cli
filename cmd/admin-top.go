@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminTopSubcommands = []cli.Command{
 	adminTopAPICmd,
@@ -34,7 +34,7 @@ var adminTopCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainAdminTop is the handle for "mc admin top" command.
+// mainAdminTop is the handle for "bm admin top" command.
 func mainAdminTop(ctx *cli.Context) error {
 	commandNotFound(ctx, adminTopSubcommands)
 	return nil

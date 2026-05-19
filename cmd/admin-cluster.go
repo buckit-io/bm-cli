@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminClusterSubcommands = []cli.Command{
 	adminClusterBucketCmd,
@@ -26,7 +26,7 @@ var adminClusterSubcommands = []cli.Command{
 
 var adminClusterCmd = cli.Command{
 	Name:            "cluster",
-	Usage:           "manage MinIO cluster metadata",
+	Usage:           "manage Buckit cluster metadata",
 	Action:          mainAdminCluster,
 	Before:          setGlobalsFromContext,
 	Flags:           globalFlags,
@@ -34,7 +34,7 @@ var adminClusterCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainAdminCluster is the handle for "mc admin cluster" command.
+// mainAdminCluster is the handle for "bm admin cluster" command.
 func mainAdminCluster(ctx *cli.Context) error {
 	commandNotFound(ctx, adminClusterSubcommands)
 	return nil

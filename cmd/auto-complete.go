@@ -23,7 +23,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 	"github.com/posener/complete"
 )
 

@@ -22,9 +22,9 @@ import (
 	"maps"
 	"strings"
 
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
-	"github.com/minio/pkg/v3/quick"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
+	"github.com/buckit-io/pkg/v3/quick"
 )
 
 // migrate config files from the any older version to the latest.

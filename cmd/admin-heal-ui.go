@@ -26,10 +26,10 @@ import (
 
 	humanize "github.com/dustin/go-humanize"
 	"github.com/fatih/color"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 const (
@@ -408,7 +408,7 @@ func (ui *uiData) healResumeMsg(aliasedURL string) string {
 	if ui.HealOpts.DryRun {
 		flags += "--dry-run "
 	}
-	return fmt.Sprintf("Healing is backgrounded, to resume watching use `mc admin heal %s %s`", flags, aliasedURL)
+	return fmt.Sprintf("Healing is backgrounded, to resume watching use `bm admin heal %s %s`", flags, aliasedURL)
 }
 
 func (ui *uiData) DisplayAndFollowHealStatus(aliasedURL string) (res madmin.HealTaskStatus, err error) {

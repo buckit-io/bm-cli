@@ -18,10 +18,10 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 )
 
 var adminAccesskeySTSRevokeFlags = []cli.Flag{
@@ -118,7 +118,7 @@ func checkSTSRevokeSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminAccesskeySTSRevoke is the handle for "mc admin accesskey sts-revoke" command.
+// mainAdminAccesskeySTSRevoke is the handle for "bm admin accesskey sts-revoke" command.
 func mainAdminAccesskeySTSRevoke(ctx *cli.Context) error {
 	checkSTSRevokeSyntax(ctx)
 

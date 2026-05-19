@@ -22,9 +22,9 @@ import (
 	"os"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 	"golang.org/x/term"
 )
 
@@ -50,7 +50,7 @@ EXAMPLES:
 `,
 }
 
-// adminKMSCreateKeyCmd is the handler for the "mc admin kms key create" command.
+// adminKMSCreateKeyCmd is the handler for the "bm admin kms key create" command.
 func mainAdminKMSCreateKey(ctx *cli.Context) error {
 	if len(ctx.Args()) != 2 {
 		showCommandHelpAndExit(ctx, 1) // last argument is exit code

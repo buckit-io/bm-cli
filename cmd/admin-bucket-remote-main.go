@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminBucketRemoteSubcommands = []cli.Command{
 	adminBucketRemoteAddCmd,
@@ -35,7 +35,7 @@ var adminBucketRemoteCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainadminBucketRemote is the handle for "mc admin bucket remote" command.
+// mainadminBucketRemote is the handle for "bm admin bucket remote" command.
 func mainadminBucketRemote(ctx *cli.Context) error {
 	commandNotFound(ctx, adminBucketRemoteSubcommands)
 	return nil

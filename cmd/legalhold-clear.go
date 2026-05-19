@@ -22,9 +22,9 @@ import (
 	"time"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/minio-go/v7"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/minio-go/v7"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var lhClearFlags = []cli.Flag{

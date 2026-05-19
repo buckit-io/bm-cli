@@ -26,8 +26,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/mimedb"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/mimedb"
 )
 
 // ClientURL url client url structure

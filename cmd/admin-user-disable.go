@@ -19,10 +19,10 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminUserDisableCmd = cli.Command{
@@ -42,7 +42,7 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Disable a user 'foobar' on MinIO server.
+  1. Disable a user 'foobar' on Buckit server.
      {{.Prompt}} {{.HelpName}} myminio foobar
 `,
 }
@@ -54,7 +54,7 @@ func checkAdminUserDisableSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminUserDisable is the handle for "mc admin user disable" command.
+// mainAdminUserDisable is the handle for "bm admin user disable" command.
 func mainAdminUserDisable(ctx *cli.Context) error {
 	checkAdminUserDisableSyntax(ctx)
 

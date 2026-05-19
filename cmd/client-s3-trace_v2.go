@@ -22,8 +22,8 @@ import (
 	"net/http/httputil"
 	"strings"
 
-	"github.com/minio/mc/pkg/httptracer"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/bm-cli/pkg/httptracer"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 // traceV2 - tracing structure for signature version '2'.

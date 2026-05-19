@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminUserSvcAcctSubcommands = []cli.Command{
 	adminUserSvcAcctAddCmd,
@@ -39,7 +39,7 @@ var adminUserSvcAcctCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainAdminUserSvcAcct is the handle for "mc admin user svcacct" command.
+// mainAdminUserSvcAcct is the handle for "bm admin user svcacct" command.
 func mainAdminUserSvcAcct(ctx *cli.Context) error {
 	commandNotFound(ctx, adminUserSvcAcctSubcommands)
 	return nil

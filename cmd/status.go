@@ -21,8 +21,8 @@ import (
 	"io"
 	"sync/atomic"
 
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 // Status implements a interface that can be used in quit mode or with progressbar.

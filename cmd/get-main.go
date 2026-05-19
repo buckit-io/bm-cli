@@ -21,8 +21,8 @@ import (
 	"context"
 	"strings"
 
-	"github.com/minio/cli"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 // get command flags.
@@ -54,10 +54,10 @@ FLAGS:
   {{end}}
 
 EXAMPLES:
-  1. Get an object from MinIO storage to local file system
+  1. Get an object from Buckit storage to local file system
      {{.Prompt}} {{.HelpName}} play/mybucket/object path-to/object
 
-  2. Get an object from MinIO storage using encryption
+  2. Get an object from Buckit storage using encryption
      {{.Prompt}} {{.HelpName}} --enc-c "play/mybucket/object=MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDA" play/mybucket/object path-to/object
 `,
 }

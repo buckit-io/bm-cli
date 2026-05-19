@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var adminSubnetRegisterCmd = cli.Command{
@@ -28,10 +28,10 @@ var adminSubnetRegisterCmd = cli.Command{
 	Action:             mainAdminRegister,
 	Before:             setGlobalsFromContext,
 	Hidden:             true,
-	CustomHelpTemplate: "Please use 'mc support register'",
+	CustomHelpTemplate: "Please use 'bm support register'",
 }
 
 func mainAdminRegister(_ *cli.Context) error {
-	deprecatedError("mc support register")
+	deprecatedError("bm support register")
 	return nil
 }

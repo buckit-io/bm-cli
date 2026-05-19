@@ -33,13 +33,13 @@ import (
 	"github.com/dustin/go-humanize"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7"
-	"github.com/minio/minio-go/v7/pkg/encrypt"
-	"github.com/minio/minio-go/v7/pkg/notification"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7"
+	"github.com/buckit-io/minio-go/v7/pkg/encrypt"
+	"github.com/buckit-io/minio-go/v7/pkg/notification"
+	"github.com/buckit-io/pkg/v3/console"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
@@ -176,7 +176,7 @@ ENVIRONMENT VARIABLES:
   MC_ENC_S3: S3 encryption key in the form of (alias/prefix=key).
 
 EXAMPLES:
-  01. Mirror a bucket recursively from MinIO cloud storage to a bucket on Amazon S3 cloud storage.
+  01. Mirror a bucket recursively from Buckit cloud storage to a bucket on Amazon S3 cloud storage.
       {{.Prompt}} {{.HelpName}} play/photos/2014 s3/backup-photos
 
   02. Mirror a local folder recursively to Amazon S3 cloud storage.
@@ -191,11 +191,11 @@ EXAMPLES:
   05. Mirror a bucket from aliased Amazon S3 cloud storage to a local folder use '--overwrite' to overwrite destination.
       {{.Prompt}} {{.HelpName}} --overwrite s3/miniocloud miniocloud-backup
 
-  06. Mirror a bucket from MinIO cloud storage to a bucket on Amazon S3 cloud storage and remove any extraneous
+  06. Mirror a bucket from Buckit cloud storage to a bucket on Amazon S3 cloud storage and remove any extraneous
       files on Amazon S3 cloud storage.
       {{.Prompt}} {{.HelpName}} --remove play/photos/2014 s3/backup-photos/2014
 
-  07. Continuously mirror a local folder recursively to MinIO cloud storage. '--watch' continuously watches for
+  07. Continuously mirror a local folder recursively to Buckit cloud storage. '--watch' continuously watches for
       new objects, uploads and removes extraneous files on Amazon S3 cloud storage.
       {{.Prompt}} {{.HelpName}} --remove --watch /var/lib/backups play/backups
 
@@ -723,7 +723,7 @@ func (mj *mirrorJob) watchMirrorEvents(ctx context.Context, events []EventInfo) 
 				(getSourceModTimeKey(mirrorURL.SourceContent.Metadata) != "" ||
 					getSourceModTimeKey(mirrorURL.SourceContent.UserMetadata) != "") {
 				// If source has active-active attributes, it means that the
-				// object was uploaded by "mc mirror", hence ignore the event
+				// object was uploaded by "bm mirror", hence ignore the event
 				// to avoid copying it.
 				continue
 			}

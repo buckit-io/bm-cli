@@ -34,14 +34,14 @@ import (
 	"time"
 
 	"github.com/inconshreveable/mousetrap"
-	"github.com/minio/cli"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7/pkg/set"
-	"github.com/minio/pkg/v3/console"
-	"github.com/minio/pkg/v3/env"
-	"github.com/minio/pkg/v3/trie"
-	"github.com/minio/pkg/v3/words"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7/pkg/set"
+	"github.com/buckit-io/pkg/v3/console"
+	"github.com/buckit-io/pkg/v3/env"
+	"github.com/buckit-io/pkg/v3/trie"
+	"github.com/buckit-io/pkg/v3/words"
 	"golang.org/x/term"
 
 	completeinstall "github.com/posener/complete/cmd/install"
@@ -72,7 +72,7 @@ TIP:
   Use '{{.Name}} --autocompletion' to enable shell autocompletion
 
 COPYRIGHT:
-  Copyright (c) 2015-` + CopyrightYear + ` MinIO, Inc.
+  Copyright (c) 2015-` + CopyrightYear + ` Buckit, Inc.
 
 LICENSE:
   GNU AGPLv3 <https://www.gnu.org/licenses/agpl-3.0.html>
@@ -104,8 +104,8 @@ func Main(args []string) error {
 		}
 	}
 
-	// ``MC_PROFILER`` supported options are [cpu, mem, block, goroutine].
-	if p := os.Getenv("MC_PROFILER"); p != "" {
+	// ``BM_PROFILER`` supported options are [cpu, mem, block, goroutine].
+	if p := os.Getenv("BM_PROFILER"); p != "" {
 		profilers := strings.Split(p, ",")
 		if e := enableProfilers(mustGetProfileDir(), profilers); e != nil {
 			console.Fatal(e)
@@ -408,7 +408,7 @@ func checkUpdate(ctx *cli.Context) {
 		} else {
 			printMsg(updateMessage{
 				Status:  "success",
-				Message: prepareUpdateMessage("Run `mc update`", latestReleaseTime.Sub(currentReleaseTime)),
+				Message: prepareUpdateMessage("Run `bm update`", latestReleaseTime.Sub(currentReleaseTime)),
 			})
 		}
 	}
@@ -463,7 +463,7 @@ var appCmds = []cli.Command{
 func printMCVersion(c *cli.Context) {
 	fmt.Fprintf(c.App.Writer, "%s version %s (commit-id=%s)\n", c.App.Name, c.App.Version, CommitID)
 	fmt.Fprintf(c.App.Writer, "Runtime: %s %s/%s\n", runtime.Version(), runtime.GOOS, runtime.GOARCH)
-	fmt.Fprintf(c.App.Writer, "Copyright (c) 2015-%s MinIO, Inc.\n", CopyrightYear)
+	fmt.Fprintf(c.App.Writer, "Copyright (c) 2015-%s Buckit, Inc.\n", CopyrightYear)
 	fmt.Fprintf(c.App.Writer, "License GNU AGPLv3 <https://www.gnu.org/licenses/agpl-3.0.html>\n")
 }
 
@@ -479,10 +479,9 @@ func registerApp(name string) *cli.App {
 	app := cli.NewApp()
 	app.Name = name
 	app.Action = func(ctx *cli.Context) error {
-		mcEnable := env.Get("MC_UPDATE", madmin.EnableOn)
-		minioEnable := env.Get("MINIO_UPDATE", madmin.EnableOn)
+		bmEnable := env.Get("BM_UPDATE", madmin.EnableOn)
 
-		if strings.HasPrefix(ReleaseTag, "RELEASE.") && (mcEnable == madmin.EnableOn || minioEnable == madmin.EnableOn) {
+		if strings.HasPrefix(ReleaseTag, "RELEASE.") && bmEnable == madmin.EnableOn {
 			// Check for new updates from dl.min.io.
 			checkUpdate(ctx)
 		}
@@ -503,9 +502,9 @@ func registerApp(name string) *cli.App {
 
 	app.Before = registerBefore
 	app.HideHelpCommand = true
-	app.Usage = "MinIO Client for object storage and filesystems."
+	app.Usage = "Buckit Client for object storage and filesystems."
 	app.Commands = appCmds
-	app.Author = "MinIO, Inc."
+	app.Author = "Buckit, Inc."
 	app.Version = ReleaseTag
 	app.Flags = append(mcFlags, globalFlags...)
 	app.CustomAppHelpTemplate = mcHelpTemplate

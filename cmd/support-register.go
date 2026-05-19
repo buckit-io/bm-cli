@@ -18,13 +18,13 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var supportRegisterFlags = append([]cli.Flag{
 	cli.StringFlag{
 		Name:  "name",
-		Usage: "Specify the name to associate to this MinIO cluster in SUBNET",
+		Usage: "Specify the name to associate to this Buckit cluster in SUBNET",
 	},
 }, subnetCommonFlags...)
 
@@ -35,10 +35,10 @@ var supportRegisterCmd = cli.Command{
 	Action:             mainSupportRegister,
 	Before:             setGlobalsFromContext,
 	Flags:              supportRegisterFlags,
-	CustomHelpTemplate: "Please use 'mc license register'",
+	CustomHelpTemplate: "Please use 'bm license register'",
 }
 
 func mainSupportRegister(_ *cli.Context) error {
-	deprecatedError("mc license register")
+	deprecatedError("bm license register")
 	return nil
 }

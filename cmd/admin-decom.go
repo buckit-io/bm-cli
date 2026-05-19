@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var adminDecommissionSubcommands = []cli.Command{
@@ -30,7 +30,7 @@ var adminDecommissionSubcommands = []cli.Command{
 var adminDecommissionCmd = cli.Command{
 	Name:            "decommission",
 	Aliases:         []string{"decom"},
-	Usage:           "manage MinIO server pool decommissioning",
+	Usage:           "manage Buckit server pool decommissioning",
 	Action:          mainAdminDecommission,
 	Before:          setGlobalsFromContext,
 	Flags:           globalFlags,
@@ -38,7 +38,7 @@ var adminDecommissionCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainAdminDecommission is the handle for "mc admin decommission" command.
+// mainAdminDecommission is the handle for "bm admin decommission" command.
 func mainAdminDecommission(ctx *cli.Context) error {
 	commandNotFound(ctx, adminDecommissionSubcommands)
 	return nil

@@ -21,8 +21,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/minio/cli"
-	"github.com/minio/minio-go/v7/pkg/set"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/minio-go/v7/pkg/set"
 )
 
 var adminSubnetHealthCmd = cli.Command{
@@ -33,12 +33,12 @@ var adminSubnetHealthCmd = cli.Command{
 	Before:             setGlobalsFromContext,
 	Hidden:             true,
 	Flags:              supportDiagFlags, // No need to append globalFlags as top level command would add them
-	CustomHelpTemplate: "This command is deprecated and will be removed in a future release. Use 'mc support diag' instead.\n",
+	CustomHelpTemplate: "This command is deprecated and will be removed in a future release. Use 'bm support diag' instead.\n",
 }
 
 func mainSubnetHealth(ctx *cli.Context) error {
 	boolValSet := set.CreateStringSet("true", "false")
-	newCmd := []string{"mc support diag"}
+	newCmd := []string{"bm support diag"}
 	newCmd = append(newCmd, ctx.Args()...)
 	for _, flg := range ctx.Command.Flags {
 		flgName := flg.GetName()

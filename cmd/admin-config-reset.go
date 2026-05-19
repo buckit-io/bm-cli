@@ -22,10 +22,10 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminConfigEnvFlags = []cli.Flag{
@@ -74,7 +74,7 @@ func (u configResetMessage) String() (msg string) {
 	msg += console.Colorize("ResetConfigSuccess",
 		fmt.Sprintf("'%s' is successfully reset.", u.key))
 	if u.restart {
-		suggestion := fmt.Sprintf("mc admin service restart %s", u.targetAlias)
+		suggestion := fmt.Sprintf("bm admin service restart %s", u.targetAlias)
 		msg += console.Colorize("ResetConfigSuccess",
 			fmt.Sprintf("\nPlease restart your server with `%s`.", suggestion))
 	}

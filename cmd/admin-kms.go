@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminKMSSubcommands = []cli.Command{
 	adminKMSKeyCmd,
@@ -33,7 +33,7 @@ var adminKMSCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainAdminKMS is the handle for the "mc admin kms" command.
+// mainAdminKMS is the handle for the "bm admin kms" command.
 func mainAdminKMS(ctx *cli.Context) error {
 	commandNotFound(ctx, adminKMSSubcommands)
 	return nil

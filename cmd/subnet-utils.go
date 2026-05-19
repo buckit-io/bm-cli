@@ -34,11 +34,11 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/minio/cli"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/licverifier"
-	"github.com/minio/pkg/v3/subnet"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/licverifier"
+	"github.com/buckit-io/pkg/v3/subnet"
 	"github.com/tidwall/gjson"
 	"golang.org/x/term"
 )
@@ -574,7 +574,7 @@ func getSubnetAPIKey(alias string) (string, error) {
 		return "", e
 	}
 	if len(apiKey) == 0 && len(lic) == 0 {
-		e = fmt.Errorf("Please register the cluster first by running 'mc license register %s'", alias)
+		e = fmt.Errorf("Please register the cluster first by running 'bm license register %s'", alias)
 		return "", e
 	}
 	return apiKey, nil

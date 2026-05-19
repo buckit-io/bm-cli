@@ -28,11 +28,11 @@ import (
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var serviceRestartFlag = []cli.Flag{
@@ -48,7 +48,7 @@ var serviceRestartFlag = []cli.Flag{
 
 var adminServiceRestartCmd = cli.Command{
 	Name:         "restart",
-	Usage:        "restart a MinIO cluster",
+	Usage:        "restart a Buckit cluster",
 	Action:       mainAdminServiceRestart,
 	OnUsageError: onUsageError,
 	Before:       setGlobalsFromContext,
@@ -63,7 +63,7 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Restart MinIO server represented by its alias 'play'.
+  1. Restart Buckit server represented by its alias 'play'.
      {{.Prompt}} {{.HelpName}} play/
 `,
 }
@@ -262,7 +262,7 @@ func mainAdminServiceRestart(ctx *cli.Context) error {
 	go func() {
 		t := time.Now()
 
-		// Restart the specified MinIO server
+		// Restart the specified Buckit server
 		result, e := client.ServiceAction(ctxt, madmin.ServiceActionOpts{
 			Action: madmin.ServiceActionRestart,
 			DryRun: ctx.Bool("dry-run"),
@@ -304,7 +304,7 @@ func mainAdminServiceRestart(ctx *cli.Context) error {
 				for {
 					healthCtx, healthCancel := context.WithTimeout(ctxt, 2*time.Second)
 
-					// Fetch the health status of the specified MinIO server
+					// Fetch the health status of the specified Buckit server
 					healthResult, healthErr := anonClient.Healthy(healthCtx, madmin.HealthOpts{})
 					healthCancel()
 

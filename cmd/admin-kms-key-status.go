@@ -21,10 +21,10 @@ import (
 	"fmt"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminKMSKeyStatusCmd = cli.Command{
@@ -44,14 +44,14 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Get default master key and its status from a MinIO server/cluster.
+  1. Get default master key and its status from a Buckit server/cluster.
      $ {{.HelpName}} play
-  2. Get the status of one particular master key from a MinIO server/cluster.
+  2. Get the status of one particular master key from a Buckit server/cluster.
      $ {{.HelpName}} play my-master-key
 `,
 }
 
-// adminKMSKeyCmd is the handle for the "mc admin kms key" command.
+// adminKMSKeyCmd is the handle for the "bm admin kms key" command.
 func mainAdminKMSKeyStatus(ctx *cli.Context) error {
 	if len(ctx.Args()) == 0 || len(ctx.Args()) > 2 {
 		showCommandHelpAndExit(ctx, 1) // last argument is exit code

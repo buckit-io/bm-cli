@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminAccesskeySubcommands = []cli.Command{
 	adminAccesskeyListCmd,
@@ -32,7 +32,7 @@ var adminAccesskeySubcommands = []cli.Command{
 
 var adminAccesskeyCmd = cli.Command{
 	Name:            "accesskey",
-	Usage:           "manage access keys defined in the MinIO server",
+	Usage:           "manage access keys defined in the Buckit server",
 	Action:          mainAdminAccesskey,
 	Before:          setGlobalsFromContext,
 	Flags:           globalFlags,

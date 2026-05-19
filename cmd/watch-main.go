@@ -25,11 +25,11 @@ import (
 
 	humanize "github.com/dustin/go-humanize"
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7/pkg/notification"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7/pkg/notification"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var watchFlags = []cli.Flag{
@@ -69,16 +69,16 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Watch new S3 operations on a MinIO server
+  1. Watch new S3 operations on a Buckit server
      {{.Prompt}} {{.HelpName}} play/testbucket
 
-  2. Watch new events for a specific prefix "output/"  on MinIO server.
+  2. Watch new events for a specific prefix "output/"  on Buckit server.
      {{.Prompt}} {{.HelpName}} --prefix "output/" play/testbucket
 
-  3. Watch new events for a specific suffix ".jpg" on MinIO server.
+  3. Watch new events for a specific suffix ".jpg" on Buckit server.
      {{.Prompt}} {{.HelpName}} --suffix ".jpg" play/testbucket
 
-  4. Watch new events on a specific prefix and suffix on MinIO server.
+  4. Watch new events on a specific prefix and suffix on Buckit server.
      {{.Prompt}} {{.HelpName}} --suffix ".jpg" --prefix "photos/" play/testbucket
 
   5. Site level watch (except new buckets created after running this command)

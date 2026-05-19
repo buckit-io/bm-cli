@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var versionSubcommands = []cli.Command{
 	versionEnableCmd,
@@ -35,7 +35,7 @@ var versionCmd = cli.Command{
 	Subcommands:     versionSubcommands,
 }
 
-// mainVersion is the handle for "mc version" command.
+// mainVersion is the handle for "bm version" command.
 func mainVersion(ctx *cli.Context) error {
 	commandNotFound(ctx, versionSubcommands)
 	return nil

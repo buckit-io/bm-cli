@@ -24,10 +24,10 @@ import (
 
 	"github.com/dustin/go-humanize"
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminDecommissionStatusCmd = cli.Command{
@@ -61,7 +61,7 @@ func checkAdminDecommissionStatusSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminDecommissionStatus is the handle for "mc admin decomission status" command.
+// mainAdminDecommissionStatus is the handle for "bm admin decomission status" command.
 func mainAdminDecommissionStatus(ctx *cli.Context) error {
 	checkAdminDecommissionStatusSyntax(ctx)
 

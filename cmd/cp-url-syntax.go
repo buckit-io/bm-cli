@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 func checkCopySyntax(cliCtx *cli.Context) {

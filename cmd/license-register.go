@@ -24,12 +24,12 @@ import (
 	"os"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7/pkg/set"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7/pkg/set"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 const (
@@ -40,7 +40,7 @@ const (
 var licenseRegisterFlags = append([]cli.Flag{
 	cli.StringFlag{
 		Name:  "name",
-		Usage: "Specify the name to associate to this MinIO cluster in SUBNET",
+		Usage: "Specify the name to associate to this Buckit cluster in SUBNET",
 	},
 	cli.StringFlag{
 		Name:  "license",
@@ -65,20 +65,20 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Register MinIO cluster at alias 'play' on SUBNET, using api key for auth
+  1. Register Buckit cluster at alias 'play' on SUBNET, using api key for auth
      {{.Prompt}} {{.HelpName}} play --api-key 08efc836-4289-dbd4-ad82-b5e8b6d25577
 
-  2. Register MinIO cluster at alias 'play' on SUBNET, using license file ./minio.license
+  2. Register Buckit cluster at alias 'play' on SUBNET, using license file ./minio.license
      {{.Prompt}} {{.HelpName}} play --license ./minio.license
 
-  3. Register MinIO cluster at alias 'play' on SUBNET, using api key for auth,
+  3. Register Buckit cluster at alias 'play' on SUBNET, using api key for auth,
      and "play-cluster" as the preferred name for the cluster on SUBNET.
      {{.Prompt}} {{.HelpName}} play --api-key 08efc836-4289-dbd4-ad82-b5e8b6d25577 --name play-cluster
 
-  4. Register MinIO cluster at alias 'play' on SUBNET in an airgapped environment
+  4. Register Buckit cluster at alias 'play' on SUBNET in an airgapped environment
      {{.Prompt}} {{.HelpName}} play --airgap
 
-  5. Register MinIO cluster at alias 'play' on SUBNET, using alias as the cluster name.
+  5. Register Buckit cluster at alias 'play' on SUBNET, using alias as the cluster name.
      This asks for SUBNET credentials if the cluster is not already registered.
      {{.Prompt}} {{.HelpName}} play
 `,

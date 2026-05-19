@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminBucketSubcommands = []cli.Command{
 	adminBucketRemoteCmd,
@@ -27,7 +27,7 @@ var adminBucketSubcommands = []cli.Command{
 
 var adminBucketCmd = cli.Command{
 	Name:            "bucket",
-	Usage:           "manage buckets defined in the MinIO server",
+	Usage:           "manage buckets defined in the Buckit server",
 	Action:          mainAdminBucket,
 	Before:          setGlobalsFromContext,
 	Flags:           globalFlags,
@@ -36,7 +36,7 @@ var adminBucketCmd = cli.Command{
 	Hidden:          true,
 }
 
-// mainAdminBucket is the handle for "mc admin bucket" command.
+// mainAdminBucket is the handle for "bm admin bucket" command.
 func mainAdminBucket(ctx *cli.Context) error {
 	commandNotFound(ctx, adminBucketSubcommands)
 	return nil

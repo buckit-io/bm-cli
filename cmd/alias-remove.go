@@ -19,8 +19,8 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var aliasRemoveCmd = cli.Command{
@@ -65,7 +65,7 @@ func checkAliasRemoveSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAliasRemove is the handle for "mc alias rm" command.
+// mainAliasRemove is the handle for "bm alias rm" command.
 func mainAliasRemove(ctx *cli.Context) error {
 	checkAliasRemoveSyntax(ctx)
 

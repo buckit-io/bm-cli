@@ -18,8 +18,8 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var supportProxyShowCmd = cli.Command{
@@ -71,7 +71,7 @@ func checkSupportProxyShowSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainSupportProxyShow is the handler for "mc support proxy show" command.
+// mainSupportProxyShow is the handler for "bm support proxy show" command.
 func mainSupportProxyShow(ctx *cli.Context) error {
 	// Check for command syntax
 	checkSupportProxyShowSyntax(ctx)

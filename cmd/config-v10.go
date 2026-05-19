@@ -20,8 +20,8 @@ package cmd
 import (
 	"sync"
 
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/quick"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/quick"
 )
 
 const (
@@ -72,7 +72,7 @@ func (c *configV10) setAlias(alias string, cfg aliasConfigV10) {
 
 // load default values for missing entries.
 func (c *configV10) loadDefaults() {
-	// MinIO server running locally.
+	// Buckit server running locally.
 	c.setAlias("local", aliasConfigV10{
 		URL:       "http://localhost:9000",
 		AccessKey: "",

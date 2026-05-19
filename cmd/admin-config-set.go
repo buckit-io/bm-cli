@@ -22,11 +22,11 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminConfigSetCmd = cli.Command{
@@ -46,13 +46,13 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Enable webhook notification target for MinIO server.
+  1. Enable webhook notification target for Buckit server.
      {{.Prompt}} {{.HelpName}} myminio/ notify_webhook endpoint="http://localhost:8080/minio/events"
 
-  2. Change region name for the MinIO server to 'us-west-1'.
+  2. Change region name for the Buckit server to 'us-west-1'.
      {{.Prompt}} {{.HelpName}} myminio/ region name=us-west-1
 
-  3. Change healing settings on a distributed MinIO server setup.
+  3. Change healing settings on a distributed Buckit server setup.
      {{.Prompt}} {{.HelpName}} mydist/ heal max_delay=300ms max_io=50
 `,
 }
@@ -69,7 +69,7 @@ func (u configSetMessage) String() (msg string) {
 	msg += console.Colorize("SetConfigSuccess",
 		"Successfully applied new settings.")
 	if u.restart {
-		suggestion := color.RedString("mc admin service restart %s", u.targetAlias)
+		suggestion := color.RedString("bm admin service restart %s", u.targetAlias)
 		msg += console.Colorize("SetConfigSuccess",
 			fmt.Sprintf("\nPlease restart your server '%s'.", suggestion))
 	}

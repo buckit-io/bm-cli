@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminScannerSubcommands = []cli.Command{
 	adminScannerInfo,
@@ -34,7 +34,7 @@ var adminScannerCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainAdminScanner is the handle for "mc admin scanner" command.
+// mainAdminScanner is the handle for "bm admin scanner" command.
 func mainAdminScanner(ctx *cli.Context) error {
 	commandNotFound(ctx, adminScannerSubcommands)
 	return nil

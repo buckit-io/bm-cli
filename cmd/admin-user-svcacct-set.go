@@ -23,10 +23,10 @@ import (
 	"time"
 
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminUserSvcAcctSetFlags = []cli.Flag{
@@ -70,10 +70,10 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Change the secret key of the service account 'J123C4ZXEQN8RK6ND35I' in MinIO server.
+  1. Change the secret key of the service account 'J123C4ZXEQN8RK6ND35I' in Buckit server.
      {{.Prompt}} {{.HelpName}} myminio/ 'J123C4ZXEQN8RK6ND35I' --secret-key 'xxxxxxx'
 
-  2. Change the expiry of the service account 'J123C4ZXEQN8RK6ND35I' in MinIO server.
+  2. Change the expiry of the service account 'J123C4ZXEQN8RK6ND35I' in Buckit server.
      {{.Prompt}} {{.HelpName}} myminio/ 'J123C4ZXEQN8RK6ND35I' --expiry 2023-06-24T10:00:00-07:00
 `,
 }
@@ -85,7 +85,7 @@ func checkAdminUserSvcAcctSetSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminUserSvcAcctSet is the handle for "mc admin user svcacct set" command.
+// mainAdminUserSvcAcctSet is the handle for "bm admin user svcacct set" command.
 func mainAdminUserSvcAcctSet(ctx *cli.Context) error {
 	checkAdminUserSvcAcctSetSyntax(ctx)
 

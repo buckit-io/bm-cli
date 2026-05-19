@@ -19,15 +19,15 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminServiceStopCmd = cli.Command{
 	Name:         "stop",
-	Usage:        "stop a MinIO cluster",
+	Usage:        "stop a Buckit cluster",
 	Action:       mainAdminServiceStop,
 	OnUsageError: onUsageError,
 	Before:       setGlobalsFromContext,
@@ -43,7 +43,7 @@ FLAGS:
   {{range .VisibleFlags}}{{.}}
   {{end}}
 EXAMPLES:
-  1. Stop MinIO server represented by its alias 'play'.
+  1. Stop Buckit server represented by its alias 'play'.
      {{.Prompt}} {{.HelpName}} play/
 `,
 }
@@ -88,7 +88,7 @@ func mainAdminServiceStop(ctx *cli.Context) error {
 	client, err := newAdminClient(aliasedURL)
 	fatalIf(err, "Unable to initialize admin connection.")
 
-	// Stop the specified MinIO server
+	// Stop the specified Buckit server
 	fatalIf(probe.NewError(client.ServiceStopV2(globalContext)), "Unable to stop the server.")
 
 	// Success..

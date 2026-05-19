@@ -18,8 +18,8 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var policyFlags = []cli.Flag{
@@ -38,11 +38,11 @@ var policyCmd = cli.Command{
 	OnUsageError: onUsageError,
 	Before:       setGlobalsFromContext,
 	Flags:        append(policyFlags, globalFlags...),
-	CustomHelpTemplate: `Please use 'mc anonymous'
+	CustomHelpTemplate: `Please use 'bm anonymous'
 `,
 }
 
 func mainPolicy(_ *cli.Context) error {
-	console.Infoln("Please use 'mc anonymous'")
+	console.Infoln("Please use 'bm anonymous'")
 	return nil
 }

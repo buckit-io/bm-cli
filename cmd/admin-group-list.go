@@ -19,9 +19,9 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/console"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminGroupListCmd = cli.Command{
@@ -54,7 +54,7 @@ func checkAdminGroupListSyntax(ctx *cli.Context) {
 	}
 }
 
-// mainAdminGroupList is the handle for "mc admin group list" command.
+// mainAdminGroupList is the handle for "bm admin group list" command.
 func mainAdminGroupList(ctx *cli.Context) error {
 	checkAdminGroupListSyntax(ctx)
 

@@ -17,7 +17,7 @@
 
 package cmd
 
-import "github.com/minio/cli"
+import "github.com/buckit-io/cli"
 
 var adminReplicateResyncSubcommands = []cli.Command{
 	adminReplicateResyncStartCmd,

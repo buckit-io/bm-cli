@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var supportProxySubcommands = []cli.Command{
@@ -38,7 +38,7 @@ var supportProxyCmd = cli.Command{
 	HideHelpCommand: true,
 }
 
-// mainSupportProxy is the handler for "mc support proxy" command.
+// mainSupportProxy is the handler for "bm support proxy" command.
 func mainSupportProxy(ctx *cli.Context) error {
 	commandNotFound(ctx, supportProxySubcommands)
 	return nil

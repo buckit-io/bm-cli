@@ -24,10 +24,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/minio/cli"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/pkg/v3/policy"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/pkg/v3/policy"
 )
 
 var idpLdapAccesskeyCreateFlags = []cli.Flag{
@@ -111,7 +111,7 @@ func commonAccesskeyCreate(ctx *cli.Context, ldap bool) error {
 	targetUser := args.Get(1)
 
 	if ctx.Bool("login") {
-		deprecatedError("mc idp ldap accesskey create-with-login")
+		deprecatedError("bm idp ldap accesskey create-with-login")
 	}
 
 	opts := accessKeyCreateOpts(ctx, targetUser)

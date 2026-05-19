@@ -18,9 +18,9 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
-	"github.com/minio/madmin-go/v3"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/buckit-io/cli"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 )
 
 const (
@@ -54,7 +54,7 @@ USAGE:
   Exactly one of --user or --group is required.
 
 POLICY:
-  Name of the policy on the MinIO server.
+  Name of the policy on the Buckit server.
 
 FLAGS:
   {{range .VisibleFlags}}{{.}}
@@ -67,7 +67,7 @@ EXAMPLES:
 `,
 }
 
-// mainAdminPolicyAttach is the handler for "mc admin policy attach" command.
+// mainAdminPolicyAttach is the handler for "bm admin policy attach" command.
 func mainAdminPolicyAttach(ctx *cli.Context) error {
 	return userAttachOrDetachPolicy(ctx, true)
 }

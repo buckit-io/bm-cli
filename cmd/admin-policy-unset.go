@@ -18,7 +18,7 @@
 package cmd
 
 import (
-	"github.com/minio/cli"
+	"github.com/buckit-io/cli"
 )
 
 var adminPolicyUnsetCmd = cli.Command{
@@ -30,10 +30,10 @@ var adminPolicyUnsetCmd = cli.Command{
 	Flags:              globalFlags,
 	HideHelpCommand:    true,
 	Hidden:             true,
-	CustomHelpTemplate: `Please use 'mc admin policy detach'`,
+	CustomHelpTemplate: `Please use 'bm admin policy detach'`,
 }
 
 func mainAdminPolicyUnsetErr(_ *cli.Context) error {
-	deprecatedError("mc admin policy detach")
+	deprecatedError("bm admin policy detach")
 	return nil
 }

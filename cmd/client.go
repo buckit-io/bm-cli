@@ -31,16 +31,16 @@ import (
 	"time"
 
 	"github.com/klauspost/compress/gzhttp"
-	"github.com/minio/mc/pkg/httptracer"
-	"github.com/minio/mc/pkg/limiter"
-	"github.com/minio/mc/pkg/probe"
-	"github.com/minio/minio-go/v7"
-	"github.com/minio/minio-go/v7/pkg/cors"
-	"github.com/minio/minio-go/v7/pkg/credentials"
-	"github.com/minio/minio-go/v7/pkg/encrypt"
-	"github.com/minio/minio-go/v7/pkg/lifecycle"
-	"github.com/minio/minio-go/v7/pkg/replication"
-	"github.com/minio/pkg/v3/env"
+	"github.com/buckit-io/bm-cli/pkg/httptracer"
+	"github.com/buckit-io/bm-cli/pkg/limiter"
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/minio-go/v7"
+	"github.com/buckit-io/minio-go/v7/pkg/cors"
+	"github.com/buckit-io/minio-go/v7/pkg/credentials"
+	"github.com/buckit-io/minio-go/v7/pkg/encrypt"
+	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
+	"github.com/buckit-io/minio-go/v7/pkg/replication"
+	"github.com/buckit-io/pkg/v3/env"
 )
 
 // DirOpt - list directory option.
