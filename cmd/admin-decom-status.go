@@ -22,12 +22,12 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/dustin/go-humanize"
-	"github.com/fatih/color"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/pkg/v3/console"
+	"github.com/dustin/go-humanize"
+	"github.com/fatih/color"
 )
 
 var adminDecommissionStatusCmd = cli.Command{
@@ -101,7 +101,8 @@ func mainAdminDecommissionStatus(ctx *cli.Context) error {
 				copied := uint64(usedStart - usedCurrent)
 				speed := uint64(float64(copied) / duration)
 				msg = "Decommissioning rate at " + humanize.IBytes(speed) + "/sec " + "[" + humanize.IBytes(
-					uint64(usedCurrent)) + "/" + humanize.IBytes(uint64(poolStatus.Decommission.TotalSize)) + "]"
+					uint64(usedCurrent),
+				) + "/" + humanize.IBytes(uint64(poolStatus.Decommission.TotalSize)) + "]"
 				msg += "\nStarted: " + humanize.RelTime(time.Now().UTC(), poolStatus.Decommission.StartTime, "", "ago")
 			} else {
 				msg = "Decommissioning is starting..."

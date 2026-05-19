@@ -26,12 +26,12 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/fatih/color"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/minio-go/v7"
 	"github.com/buckit-io/pkg/v3/console"
+	"github.com/fatih/color"
 )
 
 // cp command flags.
@@ -497,9 +497,9 @@ loop:
 				errSeen = true
 				if progressReader, pgok := pg.(*progressBar); pgok {
 					if progressReader.Get() > 0 {
-						writeContSize := (int)(cpURLs.SourceContent.Size)
-						totalPGSize := (int)(progressReader.Total)
-						written := (int)(progressReader.Get())
+						writeContSize := int(cpURLs.SourceContent.Size)
+						totalPGSize := int(progressReader.Total)
+						written := int(progressReader.Get())
 						if totalPGSize > writeContSize && written > writeContSize {
 							progressReader.Set((written - writeContSize))
 							progressReader.Update()

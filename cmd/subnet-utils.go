@@ -33,12 +33,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/google/uuid"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/pkg/v3/licverifier"
 	"github.com/buckit-io/pkg/v3/subnet"
+	"github.com/google/uuid"
 	"github.com/tidwall/gjson"
 	"golang.org/x/term"
 )

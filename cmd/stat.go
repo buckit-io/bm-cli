@@ -27,15 +27,15 @@ import (
 	"strings"
 	"time"
 
-	"github.com/dustin/go-humanize"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/minio-go/v7"
 	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
 	"github.com/buckit-io/minio-go/v7/pkg/notification"
 	"github.com/buckit-io/minio-go/v7/pkg/replication"
 	"github.com/buckit-io/pkg/v3/console"
+	"github.com/dustin/go-humanize"
 )
 
 // contentMessage container for content message structure.

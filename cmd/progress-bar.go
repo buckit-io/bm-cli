@@ -23,9 +23,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/buckit-io/pkg/v3/console"
 	"github.com/cheggaaa/pb"
 	"github.com/fatih/color"
-	"github.com/buckit-io/pkg/v3/console"
 )
 
 // progress extender.

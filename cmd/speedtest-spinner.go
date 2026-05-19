@@ -23,11 +23,11 @@ import (
 	"strings"
 	"time"
 
+	"github.com/buckit-io/madmin-go/v3"
 	"github.com/charmbracelet/bubbles/spinner"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
 	humanize "github.com/dustin/go-humanize"
-	"github.com/buckit-io/madmin-go/v3"
 	"github.com/olekukonko/tablewriter"
 )
 

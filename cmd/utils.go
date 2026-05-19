@@ -33,13 +33,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mattn/go-ieproxy"
 	"github.com/buckit-io/madmin-go/v3"
 	"github.com/buckit-io/minio-go/v7"
+	"github.com/mattn/go-ieproxy"
 
-	jwtgo "github.com/golang-jwt/jwt/v4"
 	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/pkg/v3/console"
+	jwtgo "github.com/golang-jwt/jwt/v4"
 )
 
 func isErrIgnored(err *probe.Error) (ignored bool) {

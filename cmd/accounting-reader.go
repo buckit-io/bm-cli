@@ -23,12 +23,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/fatih/color"
 	"github.com/buckit-io/pkg/v3/console"
+	"github.com/fatih/color"
 
-	"github.com/cheggaaa/pb"
-	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/bm-cli/pkg/probe"
+	json "github.com/buckit-io/colorjson"
+	"github.com/cheggaaa/pb"
 )
 
 // accounter keeps tabs of ongoing data transfer information.

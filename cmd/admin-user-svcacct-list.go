@@ -18,10 +18,10 @@
 package cmd
 
 import (
-	"github.com/fatih/color"
-	"github.com/buckit-io/cli"
 	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/cli"
 	"github.com/buckit-io/pkg/v3/console"
+	"github.com/fatih/color"
 )
 
 var adminUserSvcAcctListCmd = cli.Command{
@@ -83,7 +83,8 @@ func mainAdminUserSvcAcctList(ctx *cli.Context) error {
 		if !globalJSON {
 			// Print table header
 			var header string
-			header += console.Colorize("Headers", newPrettyTable(" | ",
+			header += console.Colorize("Headers", newPrettyTable(
+				" | ",
 				Field{"AccessKeyHeader", accessFieldMaxLen},
 				Field{"ExpirationHeader", expirationMaxLen},
 			).buildRow("   Access Key", "Expiry"))

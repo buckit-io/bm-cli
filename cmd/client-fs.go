@@ -38,7 +38,6 @@ import (
 	"github.com/pkg/xattr"
 	"github.com/rjeczalik/notify"
 
-	xfilepath "github.com/minio/filepath"
 	"github.com/buckit-io/bm-cli/pkg/disk"
 	"github.com/buckit-io/bm-cli/pkg/hookreader"
 	"github.com/buckit-io/bm-cli/pkg/probe"
@@ -49,6 +48,7 @@ import (
 	"github.com/buckit-io/minio-go/v7/pkg/notification"
 	"github.com/buckit-io/minio-go/v7/pkg/replication"
 	"github.com/buckit-io/pkg/v3/console"
+	xfilepath "github.com/minio/filepath"
 )
 
 // filesystem client

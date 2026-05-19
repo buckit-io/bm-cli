@@ -31,13 +31,13 @@ import (
 	"github.com/charmbracelet/bubbles/table"
 	"github.com/fatih/color"
 
-	tea "github.com/charmbracelet/bubbletea"
-	"github.com/charmbracelet/lipgloss"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/pkg/v3/console"
+	tea "github.com/charmbracelet/bubbletea"
+	"github.com/charmbracelet/lipgloss"
 )
 
 var replicateBacklogFlags = []cli.Flag{
@@ -109,7 +109,8 @@ func (m replicateMRFMessage) JSON() string {
 }
 
 func (m replicateMRFMessage) String() string {
-	return console.Colorize("", newPrettyTable(" | ",
+	return console.Colorize("", newPrettyTable(
+		" | ",
 		Field{getNodeTheme(m.ReplicationMRF.NodeName), len(m.ReplicationMRF.NodeName) + 3},
 		Field{"Count", 7},
 		Field{"Object", -1},

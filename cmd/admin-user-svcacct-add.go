@@ -26,14 +26,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/dustin/go-humanize"
-	"github.com/fatih/color"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/pkg/v3/console"
 	"github.com/buckit-io/pkg/v3/policy"
+	"github.com/dustin/go-humanize"
+	"github.com/fatih/color"
 )
 
 var adminUserSvcAcctAddFlags = []cli.Flag{
@@ -175,7 +175,8 @@ func (u acctMessage) String() string {
 	switch u.op {
 	case svcAccOpList:
 		// Create a new pretty table with cols configuration
-		return newPrettyTable(" | ",
+		return newPrettyTable(
+			" | ",
 			Field{"AccessKey", accessFieldMaxLen},
 			Field{"Expiration", expirationMaxLen},
 		).buildRow(u.AccessKey, func() string {
@@ -205,7 +206,8 @@ func (u acctMessage) String() string {
 					}
 					return "Expiration: no-expiry"
 				}(),
-			}, "\n"))
+			}, "\n",
+		))
 	case svcAccOpRemove:
 		return console.Colorize("AccMessage", "Removed service account `"+u.AccessKey+"` successfully.")
 	case svcAccOpDisable:

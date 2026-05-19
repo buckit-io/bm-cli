@@ -20,13 +20,13 @@ package cmd
 import (
 	"time"
 
-	humanize "github.com/dustin/go-humanize"
-	"github.com/fatih/color"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/pkg/v3/console"
+	humanize "github.com/dustin/go-humanize"
+	"github.com/fatih/color"
 )
 
 var supportTopLocksFlag = []cli.Flag{
@@ -86,7 +86,8 @@ func (u lockMessage) String() string {
 		lockState = "StaleLock"
 	}
 
-	return console.Colorize(lockState, newPrettyTable("  ",
+	return console.Colorize(lockState, newPrettyTable(
+		"  ",
 		Field{"Since", timeFieldMaxLen},
 		Field{"Type", typeFieldMaxLen},
 		Field{"Owner", timeFieldMaxLen},
@@ -169,7 +170,8 @@ const (
 )
 
 func printHeaders() {
-	console.Println(console.Colorize("Headers", newPrettyTable("  ",
+	console.Println(console.Colorize("Headers", newPrettyTable(
+		"  ",
 		Field{"Since", timeFieldMaxLen},
 		Field{"Type", typeFieldMaxLen},
 		Field{"Owner", timeFieldMaxLen},

@@ -21,14 +21,15 @@ import (
 	"fmt"
 	"net/url"
 
-	"github.com/buckit-io/cli"
 	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/cli"
 	"github.com/buckit-io/pkg/v3/console"
 )
 
 // profile command flags.
 var (
-	uploadFlags = append(globalFlags,
+	uploadFlags = append(
+		globalFlags,
 		cli.IntFlag{
 			Name:  "issue",
 			Usage: "SUBNET issue number to which the file is to be uploaded",

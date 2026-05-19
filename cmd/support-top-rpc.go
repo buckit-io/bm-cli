@@ -28,14 +28,14 @@ import (
 	"strings"
 	"time"
 
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
 	"github.com/charmbracelet/bubbles/spinner"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
 	"github.com/klauspost/compress/zstd"
-	"github.com/buckit-io/cli"
-	json "github.com/buckit-io/colorjson"
-	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/olekukonko/tablewriter"
 )
 

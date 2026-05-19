@@ -38,8 +38,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/fatih/color"
 	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/fatih/color"
 )
 
 func marshalPublicKey(pub any) (publicKeyBytes []byte, e error) {

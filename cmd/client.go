@@ -30,7 +30,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/klauspost/compress/gzhttp"
 	"github.com/buckit-io/bm-cli/pkg/httptracer"
 	"github.com/buckit-io/bm-cli/pkg/limiter"
 	"github.com/buckit-io/bm-cli/pkg/probe"
@@ -41,6 +40,7 @@ import (
 	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
 	"github.com/buckit-io/minio-go/v7/pkg/replication"
 	"github.com/buckit-io/pkg/v3/env"
+	"github.com/klauspost/compress/gzhttp"
 )
 
 // DirOpt - list directory option.

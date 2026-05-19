@@ -33,15 +33,15 @@ import (
 	"sync"
 	"time"
 
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/pkg/v3/console"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/dustin/go-humanize"
 	"github.com/fatih/color"
 	"github.com/klauspost/compress/zstd"
-	"github.com/buckit-io/cli"
-	json "github.com/buckit-io/colorjson"
-	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
-	"github.com/buckit-io/pkg/v3/console"
 )
 
 var adminTraceFlags = []cli.Flag{
@@ -751,7 +751,8 @@ func (s shortTraceMsg) String() string {
 	switch s.trcType {
 	case madmin.TraceS3, madmin.TraceInternal:
 	case madmin.TraceBootstrap:
-		fmt.Fprintf(b, "[%s] %s %s %s", console.Colorize("RespStatus", strings.ToUpper(s.trcType.String())), console.Colorize("FuncName", s.FuncName),
+		fmt.Fprintf(
+			b, "[%s] %s %s %s", console.Colorize("RespStatus", strings.ToUpper(s.trcType.String())), console.Colorize("FuncName", s.FuncName),
 			hostStr,
 			s.StatusMsg,
 		)

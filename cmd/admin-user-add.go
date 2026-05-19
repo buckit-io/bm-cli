@@ -23,11 +23,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/fatih/color"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/pkg/v3/console"
+	"github.com/fatih/color"
 	"golang.org/x/term"
 )
 
@@ -109,7 +109,8 @@ func (u userMessage) String() string {
 		policyFieldMaxLen := 20
 
 		// Create a new pretty table with cols configuration
-		return newPrettyTable("  ",
+		return newPrettyTable(
+			"  ",
 			Field{"UserStatus", userFieldMaxLen},
 			Field{"AccessKey", accessFieldMaxLen},
 			Field{"PolicyName", policyFieldMaxLen},

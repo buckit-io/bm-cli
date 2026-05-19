@@ -23,8 +23,8 @@ import (
 	"strconv"
 	"time"
 
-	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/bm-cli/pkg/probe"
+	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/minio-go/v7"
 	"github.com/buckit-io/pkg/v3/console"
 )

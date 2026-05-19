@@ -23,13 +23,13 @@ import (
 	"os"
 	"time"
 
-	"github.com/jedib0t/go-pretty/v6/table"
-	"github.com/jedib0t/go-pretty/v6/text"
-	"github.com/buckit-io/cli"
-	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/bm-cli/cmd/ilm"
 	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
+	"github.com/jedib0t/go-pretty/v6/table"
+	"github.com/jedib0t/go-pretty/v6/text"
 )
 
 var ilmListFlags = []cli.Flag{

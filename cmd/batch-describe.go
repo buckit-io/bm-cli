@@ -21,8 +21,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/buckit-io/cli"
 	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/cli"
 )
 
 var batchDescribeCmd = cli.Command{

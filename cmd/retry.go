@@ -6,8 +6,8 @@ import (
 	"math/rand"
 	"time"
 
-	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/bm-cli/pkg/probe"
+	json "github.com/buckit-io/colorjson"
 )
 
 type retryManager struct {

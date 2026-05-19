@@ -21,11 +21,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/charmbracelet/lipgloss"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/charmbracelet/lipgloss"
 )
 
 var idpOpenidAddCmd = cli.Command{
@@ -302,7 +302,8 @@ func (i idpCfgList) String() string {
 	// Override some style settings for the header
 	for ii, hdr := range headers {
 		styl := styles[ii]
-		headerRow = append(headerRow,
+		headerRow = append(
+			headerRow,
 			styl.Bold(true).
 				Foreground(lipgloss.Color("#6495ed")). // green
 				Align(lipgloss.Center).
@@ -443,7 +444,8 @@ func (i idpConfig) String() string {
 		PaddingLeft(1)
 
 	var lines []string
-	lines = append(lines, fmt.Sprintf("%s%s",
+	lines = append(lines, fmt.Sprintf(
+		"%s%s",
 		fieldColStyle.Render("enable:"),
 		valueColStyle.Render(enableStr),
 	))
@@ -455,7 +457,8 @@ func (i idpConfig) String() string {
 		if kv.IsCfg && kv.IsEnv {
 			envStr = " (environment)"
 		}
-		lines = append(lines, fmt.Sprintf("%s%s%s",
+		lines = append(lines, fmt.Sprintf(
+			"%s%s%s",
 			fieldColStyle.Render(kv.Key+":"),
 			valueColStyle.Render(kv.Value),
 			envMarkStyle.Render(envStr),

@@ -21,11 +21,11 @@ import (
 	"context"
 	"os"
 
-	tea "github.com/charmbracelet/bubbletea"
-	"github.com/dustin/go-humanize"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
+	tea "github.com/charmbracelet/bubbletea"
+	"github.com/dustin/go-humanize"
 )
 
 func mainAdminSpeedTestDrive(ctx *cli.Context, aliasedURL string, outCh chan<- PerfTestResult) error {

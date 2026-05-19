@@ -20,10 +20,10 @@ package cmd
 import (
 	"context"
 
-	tea "github.com/charmbracelet/bubbletea"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
+	tea "github.com/charmbracelet/bubbletea"
 )
 
 var supportTopAPIFlags = []cli.Flag{

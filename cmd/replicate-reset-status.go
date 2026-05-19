@@ -21,13 +21,13 @@ import (
 	"context"
 	"fmt"
 
-	humanize "github.com/dustin/go-humanize"
-	"github.com/fatih/color"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/minio-go/v7/pkg/replication"
 	"github.com/buckit-io/pkg/v3/console"
+	humanize "github.com/dustin/go-humanize"
+	"github.com/fatih/color"
 )
 
 var replicateResyncStatusFlags = []cli.Flag{
@@ -94,7 +94,8 @@ func (r replicateResyncStatusMessage) String() string {
 
 	for _, st := range r.ResyncTargetsInfo.Targets {
 		rows += "\n"
-		rows += console.Colorize("replicateResyncStatusMsg", newPrettyTable(" | ",
+		rows += console.Colorize("replicateResyncStatusMsg", newPrettyTable(
+			" | ",
 			Field{"ARN", 120},
 		).buildRow(fmt.Sprintf("%s %s", coloredDot, st.Arn)))
 		rows += "\n"
@@ -104,19 +105,22 @@ func (r replicateResyncStatusMessage) String() string {
 
 		maxLen := 15
 		theme := []string{"Replicated", "Failed"}
-		rows += console.Colorize("THeaders", newPrettyTable(" | ",
+		rows += console.Colorize("THeaders", newPrettyTable(
+			" | ",
 			Field{"Status", 21},
 			Field{"Size", maxLen},
 			Field{"Count", maxLen},
 		).buildRow("   Replication Status", "Size (Bytes)", "Count"))
 		rows += "\n"
-		rows += console.Colorize(theme[0], newPrettyTable(" | ",
+		rows += console.Colorize(theme[0], newPrettyTable(
+			" | ",
 			Field{"Status", 21},
 			Field{"Size", maxLen},
 			Field{"Count", maxLen},
 		).buildRow("   Replicated", humanize.IBytes(uint64(st.ReplicatedSize)), humanize.Comma(int64(st.ReplicatedCount))))
 		rows += "\n"
-		rows += console.Colorize(theme[0], newPrettyTable(" | ",
+		rows += console.Colorize(theme[0], newPrettyTable(
+			" | ",
 			Field{"Status", 21},
 			Field{"Size", maxLen},
 			Field{"Count", maxLen},

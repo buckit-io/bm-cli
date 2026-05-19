@@ -21,8 +21,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/charmbracelet/lipgloss"
 	"github.com/buckit-io/cli"
+	"github.com/charmbracelet/lipgloss"
 )
 
 var idpOpenidAccesskeyInfoCmd = cli.Command{

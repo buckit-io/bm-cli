@@ -20,11 +20,11 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/fatih/color"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/pkg/v3/console"
+	"github.com/fatih/color"
 )
 
 var adminRebalanceStartCmd = cli.Command{

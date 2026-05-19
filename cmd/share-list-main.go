@@ -21,8 +21,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/buckit-io/cli"
 	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/cli"
 )
 
 var shareListFlags = []cli.Flag{}

@@ -18,9 +18,9 @@
 package cmd
 
 import (
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/pkg/v3/console"
 )
 
@@ -85,7 +85,8 @@ func (h aliasMessage) String() string {
 	switch h.op {
 	case "list":
 		// Create a new pretty table with cols configuration
-		t := newPrettyRecord(2,
+		t := newPrettyRecord(
+			2,
 			Row{"Alias", "Alias"},
 			Row{"URL", "URL"},
 			Row{"AccessKey", "AccessKey"},

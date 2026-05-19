@@ -22,13 +22,13 @@ import (
 	"strconv"
 	"strings"
 
-	humanize "github.com/dustin/go-humanize"
-	"github.com/fatih/color"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/pkg/v3/console"
+	humanize "github.com/dustin/go-humanize"
+	"github.com/fatih/color"
 )
 
 var adminReplicateInfoCmd = cli.Command{
@@ -69,7 +69,8 @@ func (i srInfo) String() string {
 		messages = []string{
 			"SiteReplication enabled for:\n",
 		}
-		r := console.Colorize("THeaders", newPrettyTable(" | ",
+		r := console.Colorize("THeaders", newPrettyTable(
+			" | ",
 			Field{"Deployment ID", 36},
 
 			Field{"Name", 15},
@@ -80,7 +81,8 @@ func (i srInfo) String() string {
 		).buildRow("Deployment ID", "Site Name", "Endpoint", "Sync", "Bandwidth", "ILM Expiry Replication"))
 		messages = append(messages, r)
 
-		r = console.Colorize("THeaders", newPrettyTable(" | ",
+		r = console.Colorize("THeaders", newPrettyTable(
+			" | ",
 			Field{"Deployment ID", 36},
 
 			Field{"Name", 15},
@@ -100,7 +102,8 @@ func (i srInfo) String() string {
 				limit = humanize.Bytes(uint64(peer.DefaultBandwidth.Limit))
 				limit = fmt.Sprintf("%s/s", limit)
 			}
-			r := console.Colorize("TDetail", newPrettyTable(" | ",
+			r := console.Colorize("TDetail", newPrettyTable(
+				" | ",
 				Field{"Deployment ID", 36},
 				Field{"Name", 15},
 				Field{"Endpoint", 46},

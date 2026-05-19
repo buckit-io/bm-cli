@@ -26,14 +26,14 @@ import (
 	"strings"
 	"time"
 
-	humanize "github.com/dustin/go-humanize"
-	"github.com/fatih/color"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/minio-go/v7/pkg/replication"
 	"github.com/buckit-io/pkg/v3/console"
+	humanize "github.com/dustin/go-humanize"
+	"github.com/fatih/color"
 	"github.com/olekukonko/tablewriter"
 )
 
@@ -360,7 +360,8 @@ func (m replicateXferMessage) String() string {
 		}
 		lrgX := rqs.XferStats[replication.Large]
 		smlX := rqs.XferStats[replication.Small]
-		rows = append(rows, console.Colorize("", newPrettyTable(" | ",
+		rows = append(rows, console.Colorize("", newPrettyTable(
+			" | ",
 			Field{getNodeTheme(rqs.NodeName), len(rqs.NodeName) + 3},
 			Field{"Uptime:", 15},
 			Field{"Lbl", 25},
@@ -370,7 +371,8 @@ func (m replicateXferMessage) String() string {
 			Field{"Workers", 10},
 		).buildRow(rqs.NodeName, humanize.RelTime(time.Now(), time.Now().Add(time.Duration(rqs.Uptime)*time.Second), "", ""), "Large Objects (>=128 MiB)", fmt.Sprintf("%s/s", humanize.Bytes(uint64(lrgX.AvgRate))), fmt.Sprintf("%s/s", humanize.Bytes(uint64(lrgX.PeakRate))), fmt.Sprintf("%s/s", humanize.Bytes(uint64(lrgX.CurrRate))), fmt.Sprintf("%d", int(rqs.Workers.Avg)))))
 
-		rows = append(rows, console.Colorize("", newPrettyTable(" | ",
+		rows = append(rows, console.Colorize("", newPrettyTable(
+			" | ",
 			Field{getNodeTheme(rqs.NodeName), len(rqs.NodeName) + 3},
 			Field{"Uptime:", 15},
 			Field{"Lbl", 25},

@@ -21,8 +21,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/dustin/go-humanize"
 	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
+	"github.com/dustin/go-humanize"
 )
 
 func TestOptionFilter(t *testing.T) {

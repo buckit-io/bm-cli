@@ -31,11 +31,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/charmbracelet/lipgloss"
-	"github.com/dustin/go-humanize"
 	"github.com/buckit-io/cli"
 	"github.com/buckit-io/madmin-go/v3"
 	"github.com/buckit-io/pkg/v3/console"
+	"github.com/charmbracelet/lipgloss"
+	"github.com/dustin/go-humanize"
 	"github.com/muesli/termenv"
 	"golang.org/x/net/http/httpguts"
 )

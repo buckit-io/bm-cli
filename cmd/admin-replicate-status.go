@@ -23,14 +23,14 @@ import (
 	"strings"
 	"time"
 
-	humanize "github.com/dustin/go-humanize"
-	"github.com/fatih/color"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/minio-go/v7/pkg/replication"
 	"github.com/buckit-io/pkg/v3/console"
+	humanize "github.com/dustin/go-humanize"
+	"github.com/fatih/color"
 )
 
 var adminReplicateStatusFlags = []cli.Flag{
@@ -458,7 +458,8 @@ func (i srStatus) siteHeader(siteNames []string, legend string) string {
 		legendHdr = append(legendHdr, sname)
 		legendFields = append(legendFields, Field{"sname", 15})
 	}
-	return console.Colorize("SummaryHdr", newPrettyTable(" | ",
+	return console.Colorize("SummaryHdr", newPrettyTable(
+		" | ",
 		legendFields...,
 	).buildRow(legendHdr...))
 }

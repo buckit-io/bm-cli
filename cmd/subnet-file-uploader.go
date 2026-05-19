@@ -30,8 +30,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/klauspost/compress/zstd"
 	"github.com/buckit-io/madmin-go/v3/estream"
+	"github.com/klauspost/compress/zstd"
 )
 
 // SubnetFileUploader - struct to upload files to SUBNET

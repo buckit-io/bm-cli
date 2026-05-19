@@ -36,13 +36,13 @@ import (
 
 	_ "crypto/sha256" // needed for selfupdate hashers
 
-	"github.com/fatih/color"
-	"github.com/mattn/go-isatty"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/pkg/v3/env"
 	"github.com/buckit-io/selfupdate"
+	"github.com/fatih/color"
+	"github.com/mattn/go-isatty"
 )
 
 // Check for new software updates.

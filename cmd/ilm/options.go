@@ -24,10 +24,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/dustin/go-humanize"
-	"github.com/buckit-io/cli"
 	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/cli"
 	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
+	"github.com/dustin/go-humanize"
 	"github.com/rs/xid"
 )
 

@@ -25,9 +25,9 @@ import (
 
 	json "github.com/buckit-io/colorjson"
 
-	humanize "github.com/dustin/go-humanize"
-	"github.com/buckit-io/cli"
 	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/cli"
+	humanize "github.com/dustin/go-humanize"
 )
 
 // make a bucket.

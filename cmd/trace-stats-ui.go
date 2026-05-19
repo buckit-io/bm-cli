@@ -25,13 +25,13 @@ import (
 	"strings"
 	"time"
 
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/pkg/v3/console"
 	"github.com/charmbracelet/bubbles/spinner"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
 	"github.com/dustin/go-humanize"
 	"github.com/fatih/color"
-	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/pkg/v3/console"
 	"github.com/muesli/reflow/truncate"
 	"github.com/olekukonko/tablewriter"
 	"golang.org/x/term"
@@ -188,12 +188,14 @@ func (m *traceStatsUI) View() string {
 		console.Colorize("metrics-top-title", "Max Time"),
 	}
 	if hasTTFB {
-		t = append(t,
+		t = append(
+			t,
 			console.Colorize("metrics-top-title", "Avg TTFB"),
 			console.Colorize("metrics-top-title", "Max TTFB"),
 		)
 	}
-	t = append(t,
+	t = append(
+		t,
 		console.Colorize("metrics-top-title", "Avg Size"),
 		console.Colorize("metrics-top-title", "Rate /min"),
 		console.Colorize("metrics-top-title", "Errors"),

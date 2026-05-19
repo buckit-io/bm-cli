@@ -21,12 +21,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/charmbracelet/lipgloss"
-	humanize "github.com/dustin/go-humanize"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/charmbracelet/lipgloss"
+	humanize "github.com/dustin/go-humanize"
 )
 
 var adminAccesskeyInfoCmd = cli.Command{

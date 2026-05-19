@@ -33,15 +33,15 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/inconshreveable/mousetrap"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/minio-go/v7/pkg/set"
 	"github.com/buckit-io/pkg/v3/console"
 	"github.com/buckit-io/pkg/v3/env"
 	"github.com/buckit-io/pkg/v3/trie"
 	"github.com/buckit-io/pkg/v3/words"
+	"github.com/inconshreveable/mousetrap"
 	"golang.org/x/term"
 
 	completeinstall "github.com/posener/complete/cmd/install"

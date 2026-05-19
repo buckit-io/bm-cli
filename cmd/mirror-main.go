@@ -32,14 +32,14 @@ import (
 
 	"github.com/dustin/go-humanize"
 
-	"github.com/fatih/color"
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/minio-go/v7"
 	"github.com/buckit-io/minio-go/v7/pkg/encrypt"
 	"github.com/buckit-io/minio-go/v7/pkg/notification"
 	"github.com/buckit-io/pkg/v3/console"
+	"github.com/fatih/color"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"

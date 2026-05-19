@@ -23,10 +23,10 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/buckit-io/madmin-go/v3"
 	"github.com/charmbracelet/bubbles/spinner"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
-	"github.com/buckit-io/madmin-go/v3"
 	"github.com/olekukonko/tablewriter"
 )
 

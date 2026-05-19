@@ -21,9 +21,9 @@ import (
 	"errors"
 	"strings"
 
+	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
 )
 
 var idpLdapAccesskeyListFlags = []cli.Flag{

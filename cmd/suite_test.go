@@ -38,8 +38,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/google/uuid"
 	"github.com/buckit-io/bm-cli/pkg/disk"
+	"github.com/google/uuid"
 )
 
 // RUN: go test -v ./... -run Test_FullSuite
@@ -2935,7 +2935,8 @@ func createFile(nf newTestFile) (newTestFile *testFile) {
 
 		err = os.MkdirAll(
 			tempDir+string(os.PathSeparator)+nf.subDir,
-			0o755)
+			0o755,
+		)
 		if err != nil {
 			log.Println("Could not make additional dir:", err)
 			os.Exit(1)

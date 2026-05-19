@@ -25,10 +25,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/dustin/go-humanize"
-	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/bm-cli/pkg/probe"
+	json "github.com/buckit-io/colorjson"
 	"github.com/buckit-io/pkg/v3/console"
+	"github.com/dustin/go-humanize"
 )
 
 // printDate - human friendly formatted date.

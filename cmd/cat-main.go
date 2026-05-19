@@ -30,8 +30,8 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/buckit-io/cli"
 	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/cli"
 )
 
 var catFlags = []cli.Flag{

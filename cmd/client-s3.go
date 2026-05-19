@@ -1239,9 +1239,11 @@ func (c *S3Client) Remove(ctx context.Context, isIncomplete, isRemoveBucket, isB
 		_, object := c.url2BucketAndObject()
 		if isRemoveBucket && object != "" {
 			resultCh <- RemoveResult{
-				Err: probe.NewError(errors.New(
-					"use `bm rm` command to delete prefixes, or point your" +
-						" bucket directly, `bm rb <alias>/<bucket-name>/`"),
+				Err: probe.NewError(
+					errors.New(
+						"use `bm rm` command to delete prefixes, or point your" +
+							" bucket directly, `bm rb <alias>/<bucket-name>/`",
+					),
 				),
 			}
 			return
@@ -1367,7 +1369,8 @@ func (c *S3Client) Remove(ctx context.Context, isIncomplete, isRemoveBucket, isB
 					removeStatus.Err = errors.New(strings.Replace(
 						removeStatus.Err.Error(), "Object is WORM protected",
 						"Object, '"+removeStatus.ObjectName+" (Version ID="+
-							removeStatus.ObjectVersionID+")' is WORM protected", 1))
+							removeStatus.ObjectVersionID+")' is WORM protected", 1,
+					))
 
 					// If the removeStatus error message is:
 					// "Object is WORM protected and cannot be overwritten",
@@ -1410,7 +1413,8 @@ func (c *S3Client) MakeBucket(ctx context.Context, region string, ignoreExisting
 		}
 		var retried bool
 		for {
-			_, e := c.api.PutObject(ctx, bucket, object, bytes.NewReader([]byte("")), 0,
+			_, e := c.api.PutObject(
+				ctx, bucket, object, bytes.NewReader([]byte("")), 0,
 				// Always send Content-MD5 to succeed with bucket with
 				// locking enabled. There is no performance hit since
 				// this is always an empty object
@@ -2478,7 +2482,7 @@ func (c *S3Client) SetObjectLockConfig(ctx context.Context, mode minio.Retention
 	}
 
 	// FIXME: This is too ugly, fix minio-go
-	vuint := (uint)(validity)
+	vuint := uint(validity)
 	if mode != "" && vuint > 0 && unit != "" {
 		e := c.api.SetBucketObjectLockConfig(ctx, bucket, &mode, &vuint, &unit)
 		if e != nil {

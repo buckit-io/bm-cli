@@ -30,17 +30,17 @@ import (
 	"strings"
 	"time"
 
+	"github.com/buckit-io/bm-cli/pkg/probe"
+	"github.com/buckit-io/cli"
+	json "github.com/buckit-io/colorjson"
+	"github.com/buckit-io/madmin-go/v3"
+	"github.com/buckit-io/pkg/v3/console"
 	"github.com/charmbracelet/bubbles/spinner"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
 	"github.com/dustin/go-humanize"
 	"github.com/fatih/color"
 	"github.com/klauspost/compress/zstd"
-	"github.com/buckit-io/cli"
-	json "github.com/buckit-io/colorjson"
-	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/bm-cli/pkg/probe"
-	"github.com/buckit-io/pkg/v3/console"
 	"github.com/olekukonko/tablewriter"
 )
 
@@ -121,7 +121,8 @@ func (b bucketScanMsg) String() string {
 
 	sort.Slice(b.Stats, func(i, j int) bool { return b.Stats[i].LastUpdate.Before(b.Stats[j].LastUpdate) })
 
-	pt := newPrettyTable(" | ",
+	pt := newPrettyTable(
+		" | ",
 		Field{"Pool", 5},
 		Field{"Set", 5},
 		Field{"LastUpdate", timeFieldMaxLen},
@@ -136,7 +137,8 @@ func (b bucketScanMsg) String() string {
 				strconv.Itoa(b.Stats[i].Pool+1),
 				strconv.Itoa(b.Stats[i].Set+1),
 				humanize.RelTime(now, b.Stats[i].LastUpdate, "", "ago"),
-			) + "\n")
+			) + "\n",
+		)
 	}
 
 	var (
@@ -175,7 +177,8 @@ func (b bucketScanMsg) String() string {
 				"%s %s (took %s)\n",
 				console.Colorize("FullScan", "Full bucket scan: "),
 				humanize.RelTime(now, latestESScan, "", "ago"),
-				fmt.Sprintf("%dd%dh%dm", int(took.Hours()/24), int(took.Hours())%24, int(took.Minutes())%60)),
+				fmt.Sprintf("%dd%dh%dm", int(took.Hours()/24), int(took.Hours())%24, int(took.Minutes())%60),
+			),
 		)
 	}
 

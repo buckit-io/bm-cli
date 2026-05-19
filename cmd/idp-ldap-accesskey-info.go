@@ -20,8 +20,8 @@ package cmd
 import (
 	"strings"
 
-	"github.com/charmbracelet/lipgloss"
 	"github.com/buckit-io/cli"
+	"github.com/charmbracelet/lipgloss"
 )
 
 var idpLdapAccesskeyInfoCmd = cli.Command{
