@@ -1,6 +1,6 @@
-// Copyright (c) 2015-2022 MinIO, Inc.
+// Copyright (c) Buckit, Inc.
 //
-// This file is part of MinIO Object Storage stack
+// This file is part of Buckit CLI
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as published by
@@ -50,7 +50,7 @@ var licenseRegisterFlags = append([]cli.Flag{
 
 var licenseRegisterCmd = cli.Command{
 	Name:         "register",
-	Usage:        "register with MinIO Subscription Network",
+	Usage:        "register with Buckit Support",
 	OnUsageError: onUsageError,
 	Action:       mainLicenseRegister,
 	Before:       setGlobalsFromContext,

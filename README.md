@@ -1,14 +1,16 @@
-# MinIO Client Quickstart Guide
-[![Slack](https://slack.min.io/slack?type=svg)](https://slack.min.io) [![Go Report Card](https://goreportcard.com/badge/minio/mc)](https://goreportcard.com/report/minio/mc) [![Docker Pulls](https://img.shields.io/docker/pulls/minio/mc.svg?maxAge=604800)](https://hub.docker.com/r/minio/mc/) [![license](https://img.shields.io/badge/license-AGPL%20V3-blue)](https://github.com/minio/mc/blob/master/LICENSE)
+# bm-cli
 
-# Documentation
-- [MC documentation](https://docs.min.io/community/minio-object-store/reference/minio-mc.html)
+Buckit CLI — S3-compatible object storage client (fork of MinIO Client). Module: `github.com/buckit-io/bm-cli`.
 
-MinIO Client (mc) provides a modern alternative to UNIX commands like ls, cat, cp, mirror, diff, find etc. It supports filesystems and Amazon S3 compatible cloud storage service (AWS Signature v2 and v4).
+Embedded in [`bm`](https://github.com/buckit-io/bm) for S3 and admin operations.
+
+## Documentation
+
+- [Buckit docs — CLI reference](https://buckit.sh/docs/reference/minio-mc.html)
 
 ```
   alias      manage server credentials in configuration file
-  admin      manage MinIO servers
+  admin      manage Buckit servers
   anonymous  manage anonymous access to buckets and objects
   batch      manage batch jobs
   cp         copy objects
@@ -21,7 +23,7 @@ MinIO Client (mc) provides a modern alternative to UNIX commands like ls, cat, c
   get        get s3 object to local
   head       display first 'n' lines of an object
   ilm        manage bucket lifecycle
-  idp        manage MinIO IDentity Provider server configuration
+  idp        manage Buckit IDentity Provider server configuration
   license    license related commands
   legalhold  manage legal hold for object(s)
   ls         list buckets and objects
@@ -124,7 +126,7 @@ mc.exe --help
 Source installation is only intended for developers and advanced users. If you do not have a working Golang environment, please follow [How to install Golang](https://golang.org/doc/install). Minimum version required is [go1.22](https://golang.org/dl/#stable)
 
 ```sh
-go install github.com/minio/mc@latest
+go install github.com/buckit-io/bm-cli@latest
 ```
 
 ## Add a Cloud Storage Service
@@ -140,8 +142,8 @@ mc alias set <ALIAS> <YOUR-S3-ENDPOINT> <YOUR-ACCESS-KEY> <YOUR-SECRET-KEY> --ap
 
 Path is an optional argument. It is used to indicate whether dns or path style url requests are supported by the server. It accepts "on", "off" as valid values to enable/disable path style requests.. By default, it is set to "auto" and SDK automatically determines the type of url lookup to use.
 
-### Example - MinIO Cloud Storage
-MinIO server startup banner displays URL, access and secret keys.
+### Example - Buckit Object Storage
+Buckit server startup banner displays URL, access and secret keys.
 
 ```
 mc alias set minio http://192.168.1.51 BKIKJAA5BMMU2RHO6IBB V7f1CwQqAcwo80UEIJEjc5gVQUSSx5ohQ9GSrr12
@@ -245,8 +247,9 @@ admin    config   diff     find     ls       mirror   policy   session  sql     
 cat      cp       event    head     mb       pipe     rm       share    stat     version
 ```
 
-## Contribute to MinIO Project
-Please follow MinIO [Contributor's Guide](https://github.com/minio/mc/blob/master/CONTRIBUTING.md)
+## Contribute to Buckit
+
+Please follow the [Contributor's Guide](CONTRIBUTING.md)
 
 ## License
-Use of `mc` is governed by the GNU AGPLv3 license that can be found in the [LICENSE](https://github.com/minio/mc/blob/master/LICENSE) file.
+Use of `mc` is governed by the GNU AGPLv3 license in the [LICENSE](LICENSE) file.
