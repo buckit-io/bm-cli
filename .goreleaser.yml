@@ -4,8 +4,8 @@ release:
    name_template: "Version {{.Version}}"
    disable: true
    github:
-    owner: minio
-    name: mc
+    owner: buckit-io
+    name: bm-cli
 
 env:
   - CGO_ENABLED=0
@@ -67,7 +67,7 @@ builds:
       - -trimpath
 
     ldflags:
-      - "-s -w -X github.com/minio/mc/cmd.Version={{.Version}} -X github.com/minio/mc/cmd.ReleaseTag={{.Tag}} -X github.com/minio/mc/cmd.CommitID={{.FullCommit}} -X github.com/minio/mc/cmd.ShortCommitID={{.ShortCommit}}"
+      - "-s -w -X github.com/buckit-io/bm-cli/cmd.Version={{.Version}} -X github.com/buckit-io/bm-cli/cmd.ReleaseTag={{.Tag}} -X github.com/buckit-io/bm-cli/cmd.CommitID={{.FullCommit}} -X github.com/buckit-io/bm-cli/cmd.ShortCommitID={{.ShortCommit}}"
 
 archives:
   -
@@ -76,12 +76,12 @@ archives:
 
 nfpms:
   -
-    id: minio
+    id: buckit
     package_name: mc
-    vendor: MinIO, Inc.
-    homepage: https://min.io/
-    maintainer: dev@min.io
-    description: MinIO Client (mc) provides a modern alternative to UNIX commands like ls, cat, cp, mirror, diff, find etc. It supports filesystems and Amazon S3 compatible cloud storage service (AWS Signature v2 and v4).
+    vendor: Buckit, Inc.
+    homepage: https://buckit.sh/
+    maintainer: support@buckit.sh
+    description: Buckit CLI (mc) provides a modern alternative to UNIX commands like ls, cat, cp, mirror, diff, find etc. It supports filesystems and Amazon S3 compatible cloud storage service (AWS Signature v2 and v4).
     license: Apache 2.0
     bindir: /usr/bin
     formats:
