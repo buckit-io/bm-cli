@@ -26,7 +26,7 @@ import (
 	"net/http/httptest"
 	"strconv"
 
-	"github.com/buckit-io/minio-go/v7"
+	"github.com/buckit-io/buckit-go/v7"
 	checkv1 "gopkg.in/check.v1"
 )
 

@@ -34,9 +34,9 @@ import (
 	"golang.org/x/net/http/httpguts"
 
 	"github.com/buckit-io/bm-cli/pkg/probe"
-	"github.com/buckit-io/minio-go/v7"
-	"github.com/buckit-io/minio-go/v7/pkg/encrypt"
-	"github.com/buckit-io/minio-go/v7/pkg/tags"
+	"github.com/buckit-io/buckit-go/v7"
+	"github.com/buckit-io/buckit-go/v7/pkg/encrypt"
+	"github.com/buckit-io/buckit-go/v7/pkg/tags"
 	"github.com/buckit-io/pkg/v3/env"
 	"github.com/dustin/go-humanize"
 )

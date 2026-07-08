@@ -21,7 +21,7 @@ import (
 	"os"
 
 	json "github.com/buckit-io/colorjson"
-	"github.com/buckit-io/minio-go/v7/pkg/policy"
+	"github.com/buckit-io/buckit-go/v7/pkg/policy"
 )
 
 // isValidAccessPERM - is provided access perm string supported.

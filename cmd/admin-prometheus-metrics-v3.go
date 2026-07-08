@@ -25,7 +25,7 @@ import (
 	"strings"
 
 	"github.com/buckit-io/cli"
-	"github.com/buckit-io/minio-go/v7/pkg/set"
+	"github.com/buckit-io/buckit-go/v7/pkg/set"
 )
 
 var (

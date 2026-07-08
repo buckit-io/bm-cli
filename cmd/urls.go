@@ -19,7 +19,7 @@ package cmd
 
 import (
 	"github.com/buckit-io/bm-cli/pkg/probe"
-	"github.com/buckit-io/minio-go/v7"
+	"github.com/buckit-io/buckit-go/v7"
 )
 
 // URLs contains source and target urls

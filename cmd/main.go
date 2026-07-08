@@ -36,7 +36,7 @@ import (
 	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	"github.com/buckit-io/madmin-go/v3"
-	"github.com/buckit-io/minio-go/v7/pkg/set"
+	"github.com/buckit-io/buckit-go/v7/pkg/set"
 	"github.com/buckit-io/pkg/v3/console"
 	"github.com/buckit-io/pkg/v3/env"
 	"github.com/buckit-io/pkg/v3/trie"

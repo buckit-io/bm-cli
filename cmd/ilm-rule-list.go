@@ -27,7 +27,7 @@ import (
 	"github.com/buckit-io/bm-cli/pkg/probe"
 	"github.com/buckit-io/cli"
 	json "github.com/buckit-io/colorjson"
-	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
+	"github.com/buckit-io/buckit-go/v7/pkg/lifecycle"
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/jedib0t/go-pretty/v6/text"
 )

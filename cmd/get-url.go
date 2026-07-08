@@ -22,7 +22,7 @@ import (
 	"fmt"
 
 	"github.com/buckit-io/bm-cli/pkg/probe"
-	"github.com/buckit-io/minio-go/v7"
+	"github.com/buckit-io/buckit-go/v7"
 )
 
 // prepareGetURLs - prepares target and source clientURLs for copying.

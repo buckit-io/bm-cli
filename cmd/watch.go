@@ -23,7 +23,7 @@ import (
 	"time"
 
 	"github.com/buckit-io/bm-cli/pkg/probe"
-	"github.com/buckit-io/minio-go/v7/pkg/notification"
+	"github.com/buckit-io/buckit-go/v7/pkg/notification"
 )
 
 // EventInfo contains the information of the event that occurred and the source

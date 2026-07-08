@@ -18,7 +18,7 @@
 package ilm
 
 import (
-	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
+	"github.com/buckit-io/buckit-go/v7/pkg/lifecycle"
 	"github.com/jedib0t/go-pretty/v6/table"
 )
 
