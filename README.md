@@ -4,7 +4,10 @@
 
 `bm-cli` is the library component that implements the Buckit Manager CLI command set used by the [`bm`](https://github.com/buckit-io/bm) package.
 
-This component was originally derived from [MinIO Client](https://github.com/minio/mc). It is maintained independently, does not track the MinIO Client package, and is not affiliated with MinIO.
+> [!NOTE]
+> This repository is forked from the original open source [MinIO Client](https://github.com/minio/mc)
+> project and is maintained by Buckit project. See the LICENSE and NOTICE files for licensing and
+> attribution information.
 
 ## Development
 

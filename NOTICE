@@ -1,3 +1,20 @@
+This repository contains Buckit's fork of the MinIO Client project (`bm-cli`).
+
+Copyright (c) 2026 Buckit contributors for modifications.
+
+The original project was developed by MinIO, Inc. and its contributors.
+
+This repository is distributed under the GNU Affero General Public License,
+Version 3 (AGPL-3.0). See the LICENSE file for the complete license text.
+
+Buckit is independently developed and maintained. Buckit is not affiliated
+with, endorsed by, or sponsored by MinIO, Inc. "MinIO" is a trademark of
+MinIO, Inc.
+
+-------------------------------------------------------------------
+
+Original upstream notice:
+
 MinIO Client
 Copyright (C) 2014-2020 MinIO, Inc.
 Licensed under the AGPL-3.0.
@@ -9,9 +26,3 @@ The MinIO project contains unmodified/modified subcomponents too with
 separate copyright notices and license terms. Your use of the source
 code for the these subcomponents is subject to the terms and conditions
 of the following licenses.
-
--------------------------------------------------------------------
-Modifications and Updates:
-Buckit Manager CLI
-Copyright (C) 2026 Buckit, Authors
-Licensed under the AGPL-3.0.
